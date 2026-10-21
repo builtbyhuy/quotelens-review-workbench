@@ -1,6 +1,6 @@
 # QuoteLens browser acceptance — 21 October 2026
 
-Synthetic QA performed by the root agent through CUA against the local build and the deployed public product. The independent reviewer inspected the retained mobile screenshot and local receipt artifact, and recorded root's public-browser observations below. These are product checks, not customer use, adoption, commercial savings or hiring outcomes.
+Synthetic QA performed by the root Codex agent through CUA against the local build and the deployed public product. A separate Codex-agent reviewer inspected the retained mobile screenshot and local receipt artifact, and recorded the root agent's public-browser observations below. These are AI-assisted product checks, not an unaffiliated human review, customer use, adoption, commercial savings or hiring outcomes.
 
 ## Public v1 release
 

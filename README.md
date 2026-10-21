@@ -2,7 +2,7 @@
 
 **Compare your own supplier offers without losing the source behind a decision.**
 
-[Open the online workbench](https://quotelens-huy.hokhachuy1234.chatgpt.site) · [User guide](dist/guide.html) · [Public case study](dist/case-study.html)
+[Open the online workbench](https://quotelens-huy.hokhachuy1234.chatgpt.site) · [User guide](https://quotelens-huy.hokhachuy1234.chatgpt.site/guide.html) · [Public case study](https://quotelens-huy.hokhachuy1234.chatgpt.site/case-study.html)
 
 Independent product by [Hồ Khắc Huy](https://github.com/builtbyhuy), built with AI coding assistance on 21 October 2026. Examples and verification inputs are synthetic. No customer adoption, measured saving, procurement deployment or production readiness is claimed.
 
@@ -52,7 +52,7 @@ Node 18 or newer; no install step:
 node --test tests/core.test.cjs tests/ui-persistence.test.cjs
 ```
 
-On 21 October 2026, **27 checks passed: 23 core tests and four UI regression tests**. The core checks cover novel arbitrary inputs, exact money, pack/MOQ/line-fee rules, eligibility, CSV boundaries, source provenance, immutable receipts and hostile backup rejection. The UI checks cover explicit note saving, delayed render safety, serialized revision writes and selected-offer warning scope. A separate independent integration review exercised actual app handlers using a surrounding-workspace harness; that harness is not included as a repository test.
+On 21 October 2026, **27 checks passed: 23 core tests and four UI regression tests**. The core checks cover novel arbitrary inputs, exact money, pack/MOQ/line-fee rules, eligibility, CSV boundaries, source provenance, immutable receipts and hostile backup rejection. The UI checks cover explicit note saving, delayed render safety, serialized revision writes and selected-offer warning scope. A separate Codex-agent integration review exercised actual app handlers using a surrounding-workspace harness; that harness is not included as a repository test.
 
 Actual browser verification used a custom two-item, eight-offer CSV request with an exact selected total of **USD 66.00**. Revision 6 was approved and its exported receipt retained the saved reason. Changing a requested quantity to 24 created revision 7; reverting to 23 created revision 8, which remained unapproved after reload, while the earlier receipt stayed in history. These are synthetic functional checks, not business acceptance, savings or a complete accessibility audit.
 

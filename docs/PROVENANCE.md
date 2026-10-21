@@ -1,4 +1,6 @@
-# Provenance
+# Legacy Python prototype provenance (v1)
+
+This record describes the historical Python/SQLite prototype, not the current browser product. For the online version, see the [v2 case study](CASE-STUDY-V2.md), [current artwork and font provenance](../dist/assets/SOURCES.md) and [locally vendored Three.js motion engine](MOTION-ENGINE.md). The statements about synthetic input and runtime assets below apply to v1.
 
 Created 21 October 2026 as an independent portfolio project for Hồ Khắc Huy.
 Codex assisted with implementation, tests, interface design and documentation.
