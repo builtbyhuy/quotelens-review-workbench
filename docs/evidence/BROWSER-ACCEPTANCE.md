@@ -9,6 +9,7 @@ Synthetic QA performed by the root agent through CUA against the local browser b
 - Selected Beta (USD 25.00) and Delta (USD 41.00), totaling **USD 66.00**.
 - Saved a reviewer note through **Save note**, then approved revision 6 and downloaded the actual receipt JSON.
 - Edited clamp quantity 23 → 24 (revision 7) → 23 (revision 8), then reloaded. Approval stayed invalidated, while the one historical receipt and saved note remained.
+- Exported a workspace backup, imported it, confirmed the same-ID replacement, and saw a successful restore. A backup containing a forbidden __proto__ key was rejected without changing the current workspace.
 - Checked a 390-pixel mobile viewport: document `scrollWidth = 390`, viewport `innerWidth = 390`. Viewport was reset afterward.
 
 ## Retained evidence
@@ -21,4 +22,4 @@ The receipt records revision 6, USD 66.00, Beta and Delta, and the note “Meets
 
 Core and source checks are separate: 23 domain tests passed, independent novel-input arithmetic matched USD 66.00, and actual UI-handler checks covered stale approval, edit/revert invalidation, restore collisions, hostile backups, formula-safe exports and visible storage failure. Those harnesses do not replace real browser boundaries.
 
-Public URL loading, public guide/case-study navigation, actual hostile-input DOM execution checks and browser CSV-template download inspection remain unrecorded in this note. The measured mobile viewport is not complete accessibility or device coverage.
+Browser hostile-title/request HTML remained literal with zero injected onerror/onload handlers. A downloaded offer template prefixed a formula-leading item label with an apostrophe. Public URL loading and public guide/case-study navigation remain unrecorded in this note. The measured mobile viewport is not complete accessibility or device coverage.
