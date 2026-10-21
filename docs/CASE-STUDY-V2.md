@@ -94,3 +94,12 @@ Give an unfamiliar purchasing reviewer their own small request and supplier CSV.
 | `tests/core.test.cjs` | Reproducible v2 domain tests |
 | `docs/CORE.md` | Detailed current domain contract |
 | `docs/ARCHITECTURE.md`, `VERIFICATION.md` | Historical Python prototype documents |
+
+
+## Visual redesign
+
+The interface follows the white canvas, regular black typography and iridescent glass direction of [Lifemed Web & Motion](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion). The artwork is original to QuoteLens, generated with imagegen; the local Manrope font is bundled under SIL OFL. See [design decisions](DESIGN.md) and [asset provenance](../dist/assets/SOURCES.md). The workspace picker, working tables, forms and review summary share the same visual system. Existing data and calculation rules remain intact.
+
+![Redesigned QuoteLens interface](evidence/redesign-desktop.jpg)
+
+[Mobile interface](evidence/redesign-mobile.jpg)

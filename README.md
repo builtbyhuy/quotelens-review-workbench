@@ -54,7 +54,7 @@ Actual browser verification used a custom two-item, eight-offer CSV request with
 
 [Desktop browser evidence](docs/evidence/desktop-decision.jpg) · [Mobile browser evidence](docs/evidence/mobile-decision.jpg) · [Synthetic exported receipt](docs/evidence/synthetic-browser-receipt.json)
 
-![QuoteLens v2 browser comparison using a custom synthetic request](docs/evidence/desktop-decision.jpg)
+
 
 ## Storage, limits and deliberate scope
 
@@ -168,3 +168,12 @@ MIT licensed. No third-party runtime assets or customer records are included.
 
 </details>
 
+
+
+## Visual redesign
+
+The interface follows the white canvas, regular black typography and iridescent glass direction of [Lifemed Web & Motion](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion). The artwork is original to QuoteLens, generated with imagegen; the local Manrope font is bundled under SIL OFL. See [design decisions](docs/DESIGN.md) and [asset provenance](dist/assets/SOURCES.md). The workspace picker, working tables, forms and review summary share the same visual system. Existing data and calculation rules remain intact.
+
+![Redesigned QuoteLens interface](docs/evidence/redesign-desktop.jpg)
+
+[Mobile interface](docs/evidence/redesign-mobile.jpg)
