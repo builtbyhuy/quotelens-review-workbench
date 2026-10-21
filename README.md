@@ -21,7 +21,7 @@ The browser product starts with an empty workspace. Create arbitrary purchase re
 - Explicit selection, optional reasons, revision-specific local approvals and historical input snapshots.
 - IndexedDB persistence, visible save failures, decision CSV/receipt exports and validated workspace JSON backup/restore.
 
-Read the [current domain rules](docs/CORE.md) and [v2 case study](docs/CASE-STUDY-V2.md). The historical Python implementation below is a separate local prototype with a fixed synthetic request.
+Read the [current architecture and reviewer guide](docs/ARCHITECTURE-V2.md), [domain rules](docs/CORE.md) and [v2 case study](docs/CASE-STUDY-V2.md). The historical Python implementation below is a separate local prototype with a fixed synthetic request.
 
 ## Use the browser workflow
 
