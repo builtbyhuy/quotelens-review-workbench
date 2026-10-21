@@ -2,13 +2,13 @@
 
 **Compare your own supplier offers without losing the source behind a decision.**
 
-[Open the online workbench](https://quotelens-huy.hokhachuy1234.chatgpt.site) · [User guide](https://quotelens-huy.hokhachuy1234.chatgpt.site/guide.html) · [Public case study](https://quotelens-huy.hokhachuy1234.chatgpt.site/case-study.html)
+[Open the online workbench](https://builtbyhuy.github.io/quotelens-review-workbench/) · [User guide](https://builtbyhuy.github.io/quotelens-review-workbench/guide.html) · [Public case study](https://builtbyhuy.github.io/quotelens-review-workbench/case-study.html)
 
 Independent product by [Hồ Khắc Huy](https://github.com/builtbyhuy), built with AI coding assistance on 21 October 2026. Examples and verification inputs are synthetic. No customer adoption, measured saving, procurement deployment or production readiness is claimed.
 
-![QuoteLens current purchasing ledger](docs/evidence/cosmos-desktop.jpg)
+![QuoteLens current supplier comparison](docs/evidence/clarity-desktop.png)
 
-[Current mobile interface](docs/evidence/cosmos-mobile.jpg) · [Redesign browser checks](docs/evidence/COSMOS-REDESIGN-QA.md)
+[Current mobile interface](docs/evidence/clarity-mobile.png) · [Current design decisions](docs/DESIGN.md) · [Earlier Cosmos redesign checks](docs/evidence/COSMOS-REDESIGN-QA.md)
 
 ## Start with one decision
 
@@ -31,7 +31,7 @@ Read the [current architecture and reviewer guide](docs/ARCHITECTURE-V2.md), [do
 
 ## Use the browser workflow
 
-The interface is a paper-toned purchasing ledger: a persistent workbench rail, numbered workflow, original-input tables and a revision-specific decision summary. An explicitly fictional offer calculation explains why the lowest unit price need not produce the lowest purchase cost. View changes, source inspection and a changed selection total receive short feedback; calculation and storage do not wait for animation. Reduced-motion preference disables that feedback. See [current design decisions](docs/DESIGN.md) and [inspected Cosmos references](docs/DESIGN-SOURCES.md).
+The interface connects the purchase request, supplier offers and reviewed decision. An explicitly fictional calculation shows why the lowest unit price need not produce the lowest purchase cost. See [current design decisions](docs/DESIGN.md) for the opening experience, layout, typography and interaction choices. The [earlier Cosmos source notes](docs/DESIGN-SOURCES.md) and corresponding screenshots record that earlier presentation.
 
 1. Create a workspace and choose the review date and currency.
 2. Add your request items, matching IDs, whole quantities and optional maximum lead times.
@@ -60,7 +60,7 @@ Node 18 or newer; no install step:
 node --test tests/core.test.cjs tests/ui-persistence.test.cjs
 ```
 
-On 21 October 2026, **27 checks passed: 23 core tests and four UI regression tests**. The core checks cover novel arbitrary inputs, exact money, pack/MOQ/line-fee rules, eligibility, CSV boundaries, source provenance, immutable receipts and hostile backup rejection. The UI checks cover explicit note saving, delayed render safety, serialized revision writes and selected-offer warning scope. A separate Codex-agent integration review exercised actual app handlers using a surrounding-workspace harness; that harness is not included as a repository test.
+On 21 October 2026, **31 checks passed: 23 core tests and eight UI regression tests**. The core checks cover novel arbitrary inputs, exact money, pack/MOQ/line-fee rules, eligibility, CSV boundaries, source provenance, immutable receipts and hostile backup rejection. UI regressions cover note saving, delayed render safety, serialized revision writes, selected-offer warnings, first-use behavior, quantity boundaries and opening the displayed comparison without overwriting saved work. [Current interface checks](docs/evidence/TASK-FIRST-UI-QA.md) distinguish automated checks from actual browser observations.
 
 Actual browser verification used a custom two-item, eight-offer CSV request with an exact selected total of **USD 66.00**. Revision 6 was approved and its exported receipt retained the saved reason. Changing a requested quantity to 24 created revision 7; reverting to 23 created revision 8, which remained unapproved after reload, while the earlier receipt stayed in history. These are synthetic functional checks, not business acceptance, savings or a complete accessibility audit.
 
@@ -77,6 +77,12 @@ The [fixed synthetic corpus and expected/actual report](docs/evidence/ENGINEERIN
 ## Storage, limits and deliberate scope
 
 Data is saved in IndexedDB on the current browser origin, with explicit save-failure feedback. There is no account, authentication or cloud sync. Export JSON backups before clearing browser data, moving devices or changing origins. Shared local use is not multi-user authorization.
+
+### Moving from the earlier demo address
+
+The current demo address is `https://builtbyhuy.github.io/quotelens-review-workbench/`. If you used the [earlier hosted demo](https://quotelens-huy.hokhachuy1234.chatgpt.site/), open it in the browser where you saved your work, export each workspace as a JSON backup, then use **Import backup** at the current address. Check the restored request, offers and review history before removing an old copy. Browser storage is tied to its origin; changing the address does not move or erase the old data. There is no automatic redirect or background data transfer.
+
+The [Pages workflow](.github/workflows/pages.yml) runs the existing product checks and calculation corpus before publishing only `dist/`. It uses GitHub's built-in workflow token and short-lived Pages identity; no separate deployment secret is required. The earlier release's browser evidence keeps its original address and scope.
 
 The application has no in-app AI, OCR/PDF extraction, exchange-rate conversion, tax calculation, shared supplier-order freight, supplier integration, external messaging, payment or order placement. AI assistance describes development, not the deterministic comparison method. USD/EUR/GBP/VND workspaces use separate currencies and two decimal places, including VND. A delivery fee applies to one offer line. Quantities are whole units.
 
@@ -188,8 +194,8 @@ MIT licensed. No third-party runtime assets or customer records are included.
 
 
 
-## Visual redesign
+## Earlier visual redesign
 
-The latest design follows two inspected Cosmos references: [Swiss grid structure](https://www.cosmos.so/e/1795378467) and [an editorial works index](https://www.cosmos.so/e/1312667708). These inform asymmetric columns, aligned folio metadata, sharp rules and working files presented as records. Georgia, Arial/Helvetica and Consolas system stacks separate editorial headings, controls and numeric evidence. Ivory paper, graphite and an ochre selection cue deliberately distinguish this operational product from PourLab's game instrument. See [design decisions](docs/DESIGN.md) and [source-to-decision mapping](docs/DESIGN-SOURCES.md).
+An earlier design followed two inspected Cosmos references: [Swiss grid structure](https://www.cosmos.so/e/1795378467) and [an editorial works index](https://www.cosmos.so/e/1312667708). Its ivory ledger, editorial type and folio metadata are preserved in historical screenshots and [source-to-decision notes](docs/DESIGN-SOURCES.md). They do not describe the current opening experience; see [current design decisions](docs/DESIGN.md).
 
 The earlier Lifemed-inspired glass interface, Manrope font, original glass image and Three.js implementation remain in the repository as historical assets with their licenses. They are not loaded by the current app. Earlier `redesign-*` screenshots and `motion.gif` show that superseded version, not the current ledger. Domain rules, user data, storage and calculation behavior are preserved.

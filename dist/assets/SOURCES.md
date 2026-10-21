@@ -2,6 +2,20 @@
 
 Prepared on 2026-10-21 for the QuoteLens interface redesign.
 
+## Current interface font: Source Sans 3
+
+Unmodified Adobe Source Sans 3 upright variable WOFF2, official source commit `87b37a2daaed80fcb8e8ccb0085c4d72ddade12e`.
+
+- Source: https://github.com/adobe-fonts/source-sans/blob/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/WOFF2/VF/SourceSans3VF-Upright.ttf.woff2
+- Local file: `SourceSans3-Variable.woff2`, 170,188 bytes.
+- Complete SIL OFL 1.1 copyright/license: [SourceSans3-OFL.md](SourceSans3-OFL.md).
+- Font is locally served; no font service or remote request is required.
+- Current bolt line drawing is original project-authored SVG inside the interface. Current social preview is an actual browser screenshot.
+
+## Historical assets below
+
+These remain as provenance for earlier versions and are not loaded by the active app.
+
 ## Manrope.ttf
 
 Unmodified Manrope variable font downloaded from the official Google Fonts repository:

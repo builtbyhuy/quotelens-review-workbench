@@ -1,5 +1,7 @@
 # Cosmos purchasing-ledger redesign — browser checks
 
+> Historical interface evidence. The later task-first Source Sans/blue redesign is documented in [TASK-FIRST-UI-QA.md](TASK-FIRST-UI-QA.md). The workflow checks below retain their original scope; these images are not the current visual interface.
+
 21 October 2026. Internal Codex checks of the current redesign; not a customer study, human usability acceptance or a complete accessibility certification. Existing core/store modules and stored workspace schema are unchanged.
 
 ## Render and interaction
