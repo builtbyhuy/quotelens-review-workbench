@@ -6,6 +6,10 @@
 
 Independent product by [Hồ Khắc Huy](https://github.com/builtbyhuy), built with AI coding assistance on 21 October 2026. Examples and verification inputs are synthetic. No customer adoption, measured saving, procurement deployment or production readiness is claimed.
 
+![QuoteLens current purchasing ledger](docs/evidence/cosmos-desktop.jpg)
+
+[Current mobile interface](docs/evidence/cosmos-mobile.jpg) · [Redesign browser checks](docs/evidence/COSMOS-REDESIGN-QA.md)
+
 ## Online product: your request, your offers
 
 The browser product starts with an empty workspace. Create arbitrary purchase requests, enter offers manually or map your own CSV columns, compare the whole packs you would buy, inspect the source and record the reviewed revision. The editable fictional example is a tour; it is not a fixed input requirement.
@@ -21,9 +25,7 @@ Read the [current domain rules](docs/CORE.md) and [v2 case study](docs/CASE-STUD
 
 ## Use the browser workflow
 
-The current opening renders three curved glass quote sheets in real 3D, with a pause control and a static reduced-motion fallback. Tab changes and workflow panels receive restrained visual feedback; calculation and storage do not wait for animation. See [motion design and limitations](docs/MOTION-ENGINE.md) and [project-fit reference notes](docs/DESIGN-SOURCES.md).
-
-![Actual browser recording of the live glass](docs/evidence/motion.gif)
+The interface is a paper-toned purchasing ledger: a persistent workbench rail, numbered workflow, original-input tables and a revision-specific decision summary. An explicitly fictional offer calculation explains why the lowest unit price need not produce the lowest purchase cost. View changes, source inspection and a changed selection total receive short feedback; calculation and storage do not wait for animation. Reduced-motion preference disables that feedback. See [current design decisions](docs/DESIGN.md) and [inspected Cosmos references](docs/DESIGN-SOURCES.md).
 
 1. Create a workspace and choose the review date and currency.
 2. Add your request items, matching IDs, whole quantities and optional maximum lead times.
@@ -176,8 +178,6 @@ MIT licensed. No third-party runtime assets or customer records are included.
 
 ## Visual redesign
 
-The interface follows the white canvas, regular black typography and iridescent glass direction of [Lifemed Web & Motion](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion). The artwork is original to QuoteLens, generated with imagegen; the local Manrope font is bundled under SIL OFL. See [design decisions](docs/DESIGN.md) and [asset provenance](dist/assets/SOURCES.md). The workspace picker, working tables, forms and review summary share the same visual system. Existing data and calculation rules remain intact.
+The latest design follows two inspected Cosmos references: [Swiss grid structure](https://www.cosmos.so/e/1795378467) and [an editorial works index](https://www.cosmos.so/e/1312667708). These inform asymmetric columns, aligned folio metadata, sharp rules and working files presented as records. Georgia, Arial/Helvetica and Consolas system stacks separate editorial headings, controls and numeric evidence. Ivory paper, graphite and an ochre selection cue deliberately distinguish this operational product from PourLab's game instrument. See [design decisions](docs/DESIGN.md) and [source-to-decision mapping](docs/DESIGN-SOURCES.md).
 
-![Redesigned QuoteLens interface](docs/evidence/redesign-desktop.jpg)
-
-[Mobile interface](docs/evidence/redesign-mobile.jpg)
+The earlier Lifemed-inspired glass interface, Manrope font, original glass image and Three.js implementation remain in the repository as historical assets with their licenses. They are not loaded by the current app. Earlier `redesign-*` screenshots and `motion.gif` show that superseded version, not the current ledger. Domain rules, user data, storage and calculation behavior are preserved.

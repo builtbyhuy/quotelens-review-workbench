@@ -98,8 +98,11 @@ Give an unfamiliar purchasing reviewer their own small request and supplier CSV.
 
 ## Visual redesign
 
-The interface follows the white canvas, regular black typography and iridescent glass direction of [Lifemed Web & Motion](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion). The artwork is original to QuoteLens, generated with imagegen; the local Manrope font is bundled under SIL OFL. See [design decisions](DESIGN.md) and [asset provenance](../dist/assets/SOURCES.md). The workspace picker, working tables, forms and review summary share the same visual system. Existing data and calculation rules remain intact.
+The current paper-toned purchasing ledger takes composition principles from inspected [Swiss grid](https://www.cosmos.so/e/1795378467) and [editorial index](https://www.cosmos.so/e/1312667708) references on Cosmos. The workbench rail and ruled workspace records provide orientation; the numbered workflow, tabular numbers, visible source buttons and sharp comparison tables prioritize review. An explicitly fictional purchase example shows the effect of whole packs and line delivery without implying customer savings. System serif headings, neutral sans-serif controls and monospaced metadata distinguish the product from PourLab's playful visual direction. See [design decisions](DESIGN.md) and [reference mapping](DESIGN-SOURCES.md).
 
-![Redesigned QuoteLens interface](evidence/redesign-desktop.jpg)
+The current app no longer loads the former glass hero, Three.js runtime, Manrope font or purple surfaces. Those earlier assets and their license notices remain as historical evidence. Earlier `redesign-*` screenshots and `motion.gif` depict the superseded glass version. Current motion is short, triggered feedback for navigation, selection totals and source dialogs; reduced-motion disables it. Calculation and persistence never wait for animation. Existing data and calculation rules remain intact.
 
-[Mobile interface](evidence/redesign-mobile.jpg)
+
+## Current redesign verification
+
+The later Cosmos redesign was exercised in actual desktop and 390px browsers, including the complete product workflow, recovery/error states and local save/reload. See [current browser findings and limitations](evidence/COSMOS-REDESIGN-QA.md), [desktop](evidence/cosmos-desktop.jpg) and [mobile](evidence/cosmos-mobile.jpg). These current captures supersede earlier visual examples, while the historical engine evidence remains retained.

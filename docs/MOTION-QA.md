@@ -1,3 +1,5 @@
+> Historical record — superseded on 21 October 2026 by the Cosmos-inspired purchasing ledger. The current app does not load this glass/Three.js scene. These findings describe the earlier version; see DESIGN.md and DESIGN-SOURCES.md for the active design.
+
 # Motion QA — QuoteLens and PourLab
 
 Date: 21 October 2026. Scope: local motion upgrade, preserving each existing app and its data contracts. This record distinguishes source review, automated regression checks and actual rendered observations. No deployment or customer acceptance is established by these checks.

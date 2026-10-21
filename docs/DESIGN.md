@@ -1,19 +1,34 @@
-# Interface direction — 21 October 2026
+# QuoteLens — current interface direction
 
-The user rejected the first green dashboard design and selected [Lifemed Web & Motion by Mubien](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion) as the new visual direction. Its live site was inspected at https://lifemed.ai/ on 21 October 2026.
+Updated 21 October 2026 after the user rejected QuoteLens and PourLab sharing a visual language. This decision supersedes the earlier Lifemed white/glass direction for QuoteLens.
 
-The translation uses a white gallery canvas, regular black display typography, a restrained floating navigation bar, original refractive glass artwork, quiet lilac surfaces, thin boundaries and clear black actions. It borrows composition and visual principles, not Lifemed's brand, healthcare copy, customers, metrics, logo or artwork.
+## A Swiss editorial purchasing ledger
 
-Manrope is bundled under its complete SIL Open Font License. The original glass sculpture was generated specifically for this project using imagegen; prompts and provenance are in dist/assets/SOURCES.md. No remote font, tracking SDK, copied reference video or external animation dependency is needed.
+QuoteLens treats the working record itself as the visual subject: request, source-backed offers, actual whole-pack cost and the reviewed revision. The home page is an asymmetric editorial introduction beside an original, explicitly fictional offer calculation, followed by actual device-local workspaces as disciplined ledger rows. It is not a generic marketing hero or an abstract material sculpture.
 
-The purchase workflow uses the same visual language at a denser scale: full-width working area, calm supplier tables, legible input controls, pale review summary and explicit warnings. A workspace picker replaces the permanent sidebar. Home, workspace selection and import remain functional actions. Data and calculation rules are preserved.
+The app uses a persistent workbench rail on desktop, a compact navigation strip on mobile, numbered horizontal workflow tabs and a separate decision-summary column. Workspace context remains visible beside the current stage. Request, offers, decision, history, dialogs, guide and case study share this system. Existing item IDs, input names, actions, core calculations, IndexedDB storage and revision-specific receipts are preserved.
 
-Color roles: white #ffffff, ink #19191d, muted #6a6a75, line #e9e9ef, lilac wash #f6f5fa, focus #937ee4. Display text ranges from 50–74px desktop; working headings from 23–36px; controls and input values from 12–14px. Mobile collapses to one column with scrolling tables contained inside the table wrapper. Entry animation is short and respects reduced motion.
+## Type, color and composition
 
-Visual and browser acceptance are separate from calculation tests. See docs/evidence for recorded interface captures; these are internal checks, not user approval of the redesign.
+- Georgia / Times New Roman: editorial display and key record headings. Italic emphasis is selective, rather than a second decorative identity.
+- Arial / Helvetica: compact controls, explanatory text and operational facts.
+- Consolas / Liberation Mono: folio labels, dates, revision, units and exact tabular money.
+- Warm paper `#f5f3ec`, graphite `#262820`, quiet metadata `#6b6c61`, rule `#d7d7ca`, working sheet `#fdfcf7`, functional ochre/orange `#aa431d`.
+- Sharp dividers and square controls. No gradients, pill navigation, glass objects or ambient 3D canvas.
+- Wide editorial hierarchy resolves into denser tables and source fields. Tables retain contained horizontal overflow on narrow screens; surrounding navigation and forms reflow.
 
-## 21 October 2026 — project-fit sources and live motion
+All active fonts are system stacks; no font service, new asset license, dependency, purchase or remote design-code request is required. There is no gallery artwork or code in the implementation.
 
-The approved white/black/glass identity is preserved. [Ply – Inventory Management](https://www.behance.net/gallery/230579469/Ply-Inventory-Management) now supplies the purchasing-workflow reference: clear stages, readable supplier facts and explicit status hierarchy. [Lifemed Web & Motion](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion) remains the composition/material reference. The live hero uses three original curved quote sheets rendered with locally vendored MIT-licensed Three.js; it supersedes the earlier static-only hero description and the earlier statement that no external animation dependency is used. The generated PNG remains a fallback. No gallery artwork, models, video or code are reused.
+## Inspected professional references
 
-Lifemed's automatic case-video movement was observed; Ply's inspected sections were static. Exact source triggers and durations were not measured. QuoteLens's ambient movement and short state-feedback timings are its own choices, with pause and reduced-motion behavior. See [DESIGN-SOURCES.md](DESIGN-SOURCES.md) for inspected sources, product-specific choices and license boundaries, [MOTION-ENGINE.md](MOTION-ENGINE.md) for the runtime contract, and [MOTION-ACCEPTANCE.md](MOTION-ACCEPTANCE.md) for integrated browser findings. These notes are not user acceptance.
+See [DESIGN-SOURCES.md](DESIGN-SOURCES.md) for the source-to-decision map. The selected Cosmos grid study supplies disciplined asymmetric columns and small metadata; the works index supplies aligned records, repeated rules and folio rhythm. Ply remains the earlier purchasing-workflow research reference. The two Cosmos references are visual composition references, not evidence of procurement demand.
+
+## Motion with a purpose
+
+The active `dist/interface-motion.js` gives brief view feedback after a user changes a workflow stage, draws attention to a recomputed selected total, and opens source/review dialogs with a short settling transition. Explicit stage navigation focuses the workspace heading and immediately returns it to view; persistence acknowledgments and note editing never change scroll or focus. The method rows receive one-time entry feedback. These run through the Web Animations API and CSS control transitions, with no artificial calculation delay and no continuous ambient animation. Keyboard interaction suppresses reveal motion; `prefers-reduced-motion: reduce` disables/cancels visual animation. Because nothing loops continuously, no pause button is required. This replaces the earlier glass motion system on the active page.
+
+The former `style.css`, `motion.css`, `motion3d.js`, generated PNG, Manrope font and Three.js files are retained only as historical implementation/assets with their source and license notices. Earlier `MOTION-*` documents and recordings describe that superseded glass version; they do not establish acceptance of this ledger redesign.
+
+## Verification boundary
+
+The existing calculation/persistence checks remain the behavioral baseline. Root-level integration review owns current desktop/mobile browser checks, published screenshots and final product acceptance. A test pass establishes only its checked behavior, not user adoption or recruiter preference.

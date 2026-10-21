@@ -1,34 +1,37 @@
-# QuoteLens design sources
+# QuoteLens design sources — current ledger
 
-Recorded 21 October 2026. The approved white / black / glass direction remains the design constraint. References were opened on the designers' actual pages and inspected visually in a browser; a gallery title or thumbnail alone was not used as evidence of fit.
+Recorded 21 October 2026. The user explicitly rejected QuoteLens and PourLab looking alike and requested new direction from [Cosmos](https://www.cosmos.so/explore). The current Swiss/editorial ledger supersedes QuoteLens's earlier white / black / glass mandate.
 
-## Selected references and translation
+## Inspected Cosmos references and translation
 
-### Ply — purchasing workflow
+The root agent inspected these actual element pages visually in the browser. The implementation agent used the observed findings below. No gallery artwork, image, video, model or code was downloaded or copied.
 
-[Ply – Inventory Management, Cosmos Studio and collaborators](https://www.behance.net/gallery/230579469/Ply-Inventory-Management), published July 2025, is the primary product-fit reference. Its white panels, dark text, thin divisions, compact tabs and restrained status accents make operational data legible. The [designer's case study](https://www.cosmos.studio/projects/ply-procurement-saas-design) also explains RFQ stages, supplier coordination and CSV/Excel import progress.
+### Swiss grid study
 
-QuoteLens uses those principles for request → offers → comparison → review: keep the purchase facts, exception states, source inspection and next action close together. It retains its own workspace picker, pack/MOQ calculations, unknown-data states and receipt history. Ply's branding, warehouse imagery, green identity and full interface layout are not reused.
+[Cosmos element 1795378467](https://www.cosmos.so/e/1795378467), posted by TemplateSystems, displayed 16 July 2026. Observed: asymmetric content anchored to a consistent column grid, prominent type, small metadata, fine rules and rigorous spacing.
 
-### Lifemed — approved composition and glass
+Translation: QuoteLens uses a left workbench column, an asymmetric editorial introduction beside an actual fictional purchase calculation, small folio labels, sharp horizontal workflow divisions and purposeful negative space. The app remains an operational tool; the typography and grid support source and numeric review rather than decorative floating objects.
 
-[Lifemed Web & Motion, Mubien](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion), published July 2026, remains the visual reference for whitespace, regular black display type, compact black actions, thin navigation and layered iridescent glass. QuoteLens translates the glass into **three original curved quote sheets** with physical depth and restrained document strokes. Their slow convergence and separation suggest comparison while preserving the heading's readability. They are project-created geometry, not a screenshot, extracted model or textured copy of Lifemed artwork.
+### Editorial works index
 
-Lifemed's healthcare copy, folder-shaped brand device, customer claims, diagrams and video sequences are excluded. Its broad composition fits the approved identity; Ply is more useful for the purchasing task itself.
+[Cosmos element 1312667708](https://www.cosmos.so/e/1312667708), posted by Arslan Khan, displayed 23 December 2024. Observed: tall works index, one-sided small metadata and folio labels, tight row rules, a repeated aligned image/content column, calm type and small italic numerals.
 
-## Motion evidence and project choices
+Translation: device-local workspaces become aligned records with title, counts and currency in consistent columns; the method uses numbered ruled rows rather than equal feature cards. Workflow tabs show numbered chapter labels. The repository does not reuse the source's images, branding or exact artwork.
 
-Lifemed's embedded video was seen changing between a claim/file composition and the Analyze / Integrate / Automate cards without a user action. This verifies automatic presentation motion in the case video. It does not establish the live site's interaction trigger, source easing or exact duration. The inspected Ply sections were static designs; no product animation timing was verified.
+The second search path was signup-gated. No financial dashboard reference was successfully inspected, so this document makes no such source claim. The paper/graphite palette, Georgia/Arial/Consolas stack, exact spacing, calculation illustration and timing are original project decisions, not specifications measured from Cosmos.
 
-All QuoteLens timing is therefore a project choice, not a measured Behance specification. Short control feedback (about 120–180 ms), view changes (about 180–260 ms) and grouped result emphasis (about 260–400 ms) are design starting ranges, not a claim that every range is implemented. Feedback must follow actual data/state changes; imports and calculation results must not gain artificial waiting time. The implemented hero's geometry, pause control, reduced-motion default, offscreen suspension and fallback contract are recorded in [MOTION-ENGINE.md](MOTION-ENGINE.md). Source inspection or a still image does not establish final motion acceptance.
+## Purchasing-workflow research retained
 
-## Source and license boundaries
+[Ply – Inventory Management](https://www.behance.net/gallery/230579469/Ply-Inventory-Management) and the [designer's case study](https://www.cosmos.studio/projects/ply-procurement-saas-design) were inspected earlier for RFQ stages, supplier facts and CSV import. They informed keeping request, offers, comparison and review connected. Ply's logos, warehouse imagery, green identity, code and full interface are not reused. This is product-fit design research, not user validation or evidence of willingness to pay.
 
-- The original project code and generated runtime geometry use the repository's [MIT license](../LICENSE). This does not relicense third-party or gallery material.
-- Three.js **0.180.0 / r180** is vendored locally under its own [MIT notice](../dist/vendor/three/LICENSE). Keep that notice with redistributed copies. It provides the rendering engine; it does not provide the gallery's art or design rights.
-- Manrope retains its separate SIL Open Font License. The original generated fallback image and font provenance are recorded in [asset SOURCES.md](../dist/assets/SOURCES.md). The fallback image is a separate pre-rendered asset, not the live geometry.
-- Ply's page displayed **All Rights Reserved**. Lifemed displayed **Attribution / Non-commercial / No Derivatives** badges. Neither inspected page offered a verified commercial source-code/asset license or download price. They supply observed design principles only; no gallery image, video, font, model or code was copied into QuoteLens.
+## Rights, assets and costs
 
-No designer was contacted and no asset, subscription or service was purchased for this reference work.
+Cosmos element visibility is not a reuse license. No verified commercial license for the displayed gallery artwork or source code was established; the references are used only for general composition principles. Active UI code and the original illustrative ledger are project-created under the repository's MIT license. The active app uses only system font stacks and adds no external font files or services.
 
-Integrated geometry, recordings, narrow-screen checks and interaction findings are recorded separately in [MOTION-ACCEPTANCE.md](MOTION-ACCEPTANCE.md).
+Historical assets remain in the repository with their original provenance: Manrope's SIL OFL notice, the project-generated glass PNG, and locally vendored Three.js 0.180.0 / r180 with its MIT notice. They are no longer loaded by the current app. [Lifemed Web & Motion](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion) was the earlier composition/material reference; its gallery badges did not grant permission to copy its artwork. The earlier glass implementation and motion records are retained as superseded history, not the current design mandate.
+
+No designer was contacted, no private material was sent to a service, and no asset, subscription or professional service was purchased. No externally hosted artwork, component bundle or runtime dependency was introduced for this redesign.
+
+## Current motion and acceptance
+
+Motion is limited to local workflow transitions, recomputed total emphasis, source/review dialogs and one-time method-row entry. `prefers-reduced-motion` disables it; no continuously running scene needs a pause control. Final integrated browser evidence is separate from source inspection and unit tests. See [DESIGN.md](DESIGN.md) for the implementation contract and root-level acceptance records for actual verified states.

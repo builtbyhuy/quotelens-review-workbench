@@ -1,6 +1,6 @@
 // Visual feedback is independent of calculation, persistence and focus handling.
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-let keyboard = false, pendingView = null;
+let keyboard = false, pendingView = null, emphasizeDecision = false;
 document.addEventListener('keydown', () => { keyboard = true; }, { capture: true });
 document.addEventListener('pointerdown', () => { keyboard = false; }, { capture: true, passive: true });
 const reveal = (node, distance = 8, duration = 220) => {
@@ -10,6 +10,7 @@ const reveal = (node, distance = 8, duration = 220) => {
 document.addEventListener('click', event => {
   const tab = event.target.closest('[data-action="view"]');
   if (tab && !tab.classList.contains('active')) pendingView = tab.dataset.view;
+  if (event.target.closest('[data-action="lowest"]')) emphasizeDecision = true;
 }, true);
 const app = document.getElementById('app');
 const seen = new WeakSet();
@@ -22,6 +23,10 @@ function discover() {
   if (pendingView) {
     reveal(app.querySelector('.workspace-view'));
     pendingView = null;
+  }
+  if (emphasizeDecision) {
+    reveal(app.querySelector('.decision-summary .amount'), 5, 300);
+    emphasizeDecision = false;
   }
   app.querySelectorAll('.workflow-panel').forEach(node => {
     if (!seen.has(node)) { seen.add(node); observed.add(node); observer.observe(node); }

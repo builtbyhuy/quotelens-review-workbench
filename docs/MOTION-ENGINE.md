@@ -1,3 +1,5 @@
+> Historical record — superseded on 21 October 2026 by the Cosmos-inspired purchasing ledger. The current app does not load this glass/Three.js scene. These findings describe the earlier version; see DESIGN.md and DESIGN-SOURCES.md for the active design.
+
 # Live glass hero
 
 The hero now has a local WebGL scene. It does not rotate, warp, or map the fallback PNG onto a plane. Three.js r180 / 0.180.0 is pinned inside `dist/vendor/three/` with its MIT license and source URLs. `motion3d.js` is identical in QuoteLens and PourLab; the `data-motion-scene` value chooses the sculpture.

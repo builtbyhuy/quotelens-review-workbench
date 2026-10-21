@@ -31,4 +31,4 @@ An original AI-generated decorative sculpture produced with the built-in image g
 
 ## Social preview — 21 October 2026
 
-`social-preview.jpg` is an actual CUA-controlled browser capture of this application's public page. It contains only synthetic verification state. It is not a generated mockup or evidence of customer use. The underlying font and locally bundled Three.js retain their separate licenses documented here and in `vendor/three/LICENSE`.
+`social-preview.jpg` was replaced for the Cosmos redesign on 21 October 2026. It is an unaltered 1280×720 CUA-controlled browser capture of the working local preview of the source being released. It shows a first-visit interface with empty local files or an explicitly fictional starting puzzle. It is not a generated mockup or evidence of customer use. The earlier glass-image sections above describe retained historical assets; the current app does not load the glass hero or Three.js. Retained third-party assets keep their separate license notices.

@@ -1,3 +1,5 @@
+> Historical record — superseded on 21 October 2026 by the Cosmos-inspired purchasing ledger. The current app does not load this glass/Three.js scene. These findings describe the earlier version; see DESIGN.md and DESIGN-SOURCES.md for the active design.
+
 # Integrated motion acceptance — 21 October 2026
 
 This is an observed browser check, separate from user research and visual preference approval.
@@ -8,6 +10,6 @@ This is an observed browser check, separate from user research and visual prefer
 - A legal manual pour changed bottle 1 from [0,1,2] to [0,1] and bottle 4 from [] to [2]. A single visual trace was observed while the game already reported one pour; focus remained on bottle 4. Captured separately in pourframes.json/JPEG frames.
 - Undo restored the starting level. Actual A* solved the custom three-color capacity-three arrangement in seven pours / 48 discovered states. Next, Next, Previous returned to 1/7 with one trace and focus on Previous. No visual queue blocked input.
 - Mobile illegal pour from full bottle 1 to full bottle 2 produced the actual legal-pour error, kept zero pours, retained the source selection and created zero traces.
-- Independent test/control/lifecycle evidence is in QA.md: QuoteLens 27/27, PourLab 8/8, reduced-motion startup/opt-in/keyboard pause, offscreen suspension and repeated hero cleanup.
+- Independent test/control/lifecycle evidence is in [MOTION-QA.md](MOTION-QA.md): QuoteLens 27/27, PourLab 8/8, reduced-motion startup/opt-in/keyboard pause, offscreen suspension and repeated hero cleanup.
 
 Limitations: no measured GPU/memory budget, physical mobile performance, forced context loss, fluid physics, exhaustive browser compatibility, full accessibility audit or customer acceptance. Hero motion is an art-directed sculpture. The gameplay trace explains actual state changes; it is not a fluid simulation.
