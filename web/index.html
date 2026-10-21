@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An independent supplier-quote review workbench with source evidence and versioned approvals.">
+  <title>QuoteLens · Supplier quote review</title><link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to review</a>
+  <aside class="sidebar">
+    <a href="/" class="brand" aria-label="QuoteLens home"><span class="brandmark">Q</span>QuoteLens</a>
+    <div class="workspace-name">Operations workspace</div>
+    <nav aria-label="Workspace"><a class="navlink active" href="#main"><span>▤</span> Quote review</a><button class="navlink" id="audit-nav"><span>◷</span> Decision history</button><a class="navlink" href="/samples/clean.csv" download><span>↓</span> CSV template</a></nav>
+    <div class="sidebar-note"><span class="local-dot"></span> Runs on your machine<p>CSV files and decisions stay in this local workspace.</p></div>
+    <div class="byline">An independent project by<br><a href="https://github.com/builtbyhuy" target="_blank" rel="noreferrer">Hồ Khắc Huy</a></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><span>Purchasing <span class="slash">/</span> Supplier comparison</span><span class="demo-label">Synthetic demonstration</span></header>
+    <main id="main" tabindex="-1">
+      <div class="heading"><div><div class="breadcrumb">Purchase request RFQ-1042</div><h1>Review supplier quotes</h1><p>Compare the actual purchase cost. Keep every decision tied to its source.</p></div><div class="heading-actions"><label for="csv-upload" class="button">Import CSV</label><input id="csv-upload" type="file" accept=".csv,text/csv"><button id="demo-clean" class="primary">Load clean sample</button></div></div>
+      <div class="scenario-bar"><span>Workshop maintenance supplies</span><span>4 requested items</span><span id="review-date">Review date: 21 Oct 2026</span><button id="demo-conflict" class="text-button">Try conflicting quotes</button></div>
+      <div id="notice" role="status" aria-live="polite"></div>
+      <section class="review-panel" aria-labelledby="comparison-title">
+        <div class="panel-heading"><div><h2 id="comparison-title">Offer comparison</h2><p id="source-meta">Loading your local workspace…</p></div><span id="review-status" class="badge">Loading</span></div>
+        <div class="comparison-layout"><div class="offer-area"><div id="items"></div><div class="comparison-footer"><span>Prices compare whole packs for the requested quantity. Freight and tax are excluded.</span></div></div><aside class="decision" aria-labelledby="decision-title"><h2 id="decision-title">Your selection</h2><div id="selection-summary"></div><button id="approve" class="primary approve" disabled>Approve selection</button><div id="exports"></div><p class="decision-note">Records a local review decision. No order is placed and no supplier is contacted.</p></aside></div>
+      </section>
+      <section id="issues-section" class="issues-panel" aria-labelledby="issues-title"><div class="section-header"><div><h2 id="issues-title">Source issues</h2><p>Excluded offers stay visible so corrections can be traced.</p></div><span class="small-label" id="issue-count"></span></div><div id="issues"></div></section>
+      <section class="history-panel" id="history" aria-labelledby="history-title" tabindex="-1"><div class="section-header"><div><h2 id="history-title">Decision history</h2><p>Imports, selection changes and approvals are retained in SQLite.</p></div><button id="refresh" class="button">Refresh</button></div><div id="audit"></div></section>
+      <footer class="page-footer"><span>Independent, AI-assisted portfolio project. All suppliers and requests in the samples are fictional.</span><span>Python · SQLite · JavaScript</span></footer>
+    </main>
+  </div>
+  <dialog id="source-dialog" aria-labelledby="source-title"><div class="dialog-head"><div><div class="breadcrumb">Original CSV evidence</div><h2 id="source-title">Source row</h2></div><button id="close-source" class="button">Close</button></div><div id="source-content"></div></dialog>
+</body>
+</html>

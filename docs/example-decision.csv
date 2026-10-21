@@ -1,0 +1,5 @@
+approval_id,sku,supplier,quote_ref,required_units,packs_purchased,units_purchased,total,currency,source_filename,source_line,source_sha256,snapshot_sha256
+QL-1F766606,BOLT-M8,Eastworks Trading,EW-56,120,120,120,22.80,USD,clean.csv,10,7e401d2185244619703ac549a092080f87ac6cfd64f732cd9af02ce1416c1c54,f3f812765fd697ceda4be166ae0e4d3bb3ccbb3623e74df27e108fe99d60e641
+QL-1F766606,GLOVE-M,Meridian Parts,MP-208,75,3,75,84.00,USD,clean.csv,7,7e401d2185244619703ac549a092080f87ac6cfd64f732cd9af02ce1416c1c54,f3f812765fd697ceda4be166ae0e4d3bb3ccbb3623e74df27e108fe99d60e641
+QL-1F766606,FILTER-A,Eastworks Trading,EW-56,8,4,8,60.00,USD,clean.csv,12,7e401d2185244619703ac549a092080f87ac6cfd64f732cd9af02ce1416c1c54,f3f812765fd697ceda4be166ae0e4d3bb3ccbb3623e74df27e108fe99d60e641
+QL-1F766606,BELT-B,Meridian Parts,MP-208,6,3,6,90.00,USD,clean.csv,9,7e401d2185244619703ac549a092080f87ac6cfd64f732cd9af02ce1416c1c54,f3f812765fd697ceda4be166ae0e4d3bb3ccbb3623e74df27e108fe99d60e641
