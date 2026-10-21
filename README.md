@@ -12,18 +12,18 @@ Independent product by [Hồ Khắc Huy](https://github.com/builtbyhuy), built w
 
 ## Start with one decision
 
-Inspect a complete synthetic review: [six original CSV offer rows](dist/assets/reviewer-offers.csv), [revision 7 receipt](dist/assets/reviewed-receipt.json), and [current browser findings](docs/evidence/COSMOS-REDESIGN-QA.md). The reviewed request is 37 rings and 11 seals, EUR, 21 October 2026, maximum lead seven days. Orbit Supply plus Documented Seals totals EUR 60.95. Increasing rings to 38 keeps that total but invalidates the earlier approval: input identity matters even without a price change.
+Inspect a complete synthetic review: [six original CSV offer rows](dist/assets/reviewer-offers.csv), [revision 7 receipt](dist/assets/reviewed-receipt.json), and [recorded workflow findings from the earlier ledger interface](docs/evidence/COSMOS-REDESIGN-QA.md). The reviewed request is 37 rings and 11 seals, EUR, 21 October 2026, maximum lead seven days. Orbit Supply plus Documented Seals totals EUR 60.95. Increasing rings to 38 keeps that total but invalidates the earlier approval: input identity matters even without a price change. Those captures retain their original interface and execution scope; [current first-use desktop and phone checks](docs/evidence/TASK-FIRST-UI-QA.md) cover the shipped opening experience.
 
 The [independent calculation comparison](docs/evidence/ENGINEERING-EVALUATION.md) covers 15 fixed synthetic cases and 33 offer rows, with a separate rational reference, handwritten expectations and revision/content controls. It is reproducible engineering evidence, not a claim of customer savings.
 
 ## Online product: your request, your offers
 
-The browser product starts with an empty workspace. Create arbitrary purchase requests, enter offers manually or map your own CSV columns, compare the whole packs you would buy, inspect the source and record the reviewed revision. The editable fictional example is a tour; it is not a fixed input requirement.
+The browser product opens on an overview with an interactive, explicitly fictional supplier comparison and links to saved workspaces. **Compare my quotes** creates an empty workspace for arbitrary purchase requests. Enter offers manually or map your own CSV columns, compare the whole packs you would buy, inspect the source and record the reviewed revision. **Open this comparison** instead creates a separate editable workspace with the exact quantity and offers shown in the example. Trying quantities alone does not save or overwrite a workspace.
 
 - User-created workspaces with a review date, one currency and arbitrary request items.
 - Generic CSV column mapping and manual offer entry, preserving original fields and physical CSV row references.
 - Exact `BigInt` money: whole-pack rounding, minimum pack orders and a delivery fee for each offer line.
-- Explicit eligibility and warnings for stock, expiry, lead time, duplicate identities, currency and invalid values. Missing facts are not silently converted into confirmation or zero.
+- Explicit eligibility and warnings for stock, expiry, lead time, duplicate identities, currency and invalid values. Missing stock, lead time and validity remain unverified. An unmapped delivery-fee column explicitly defaults to zero; enter a known fee rather than treating that default as a supplier promise.
 - Explicit selection, optional reasons, revision-specific local approvals and historical input snapshots.
 - IndexedDB persistence, visible save failures, decision CSV/receipt exports and validated workspace JSON backup/restore.
 
@@ -31,9 +31,9 @@ Read the [current architecture and reviewer guide](docs/ARCHITECTURE-V2.md), [do
 
 ## Use the browser workflow
 
-The interface connects the purchase request, supplier offers and reviewed decision. An explicitly fictional calculation shows why the lowest unit price need not produce the lowest purchase cost. See [current design decisions](docs/DESIGN.md) for the opening experience, layout, typography and interaction choices. The [earlier Cosmos source notes](docs/DESIGN-SOURCES.md) and corresponding screenshots record that earlier presentation.
+The interface connects the purchase request, supplier offers and reviewed decision. An explicitly fictional calculation shows why the lowest unit price need not produce the lowest whole-pack cost plus entered delivery fees per offer line. Taxes, FX and shared supplier-order freight are outside that comparison. See [current design decisions](docs/DESIGN.md) and [inspected sources and rights](docs/DESIGN-SOURCES.md) for the shipped opening experience, layout, typography and interaction choices. The [earlier Cosmos browser record](docs/evidence/COSMOS-REDESIGN-QA.md) and its screenshots describe that historical presentation.
 
-1. Create a workspace and choose the review date and currency.
+1. From the overview, choose **Compare my quotes** to create a workspace, then set its review date and currency.
 2. Add your request items, matching IDs, whole quantities and optional maximum lead times.
 3. Add manual offers or import a CSV and map its columns.
 4. Inspect whole-pack costs, source rows, blocked offers and unverified facts.
@@ -62,9 +62,9 @@ node --test tests/core.test.cjs tests/ui-persistence.test.cjs
 
 On 21 October 2026, **32 checks passed: 23 core tests and nine UI regression tests**. The core checks cover novel arbitrary inputs, exact money, pack/MOQ/line-fee rules, eligibility, CSV boundaries, source provenance, immutable receipts and hostile backup rejection. UI regressions cover note saving, delayed render safety, serialized revision writes, selected-offer warnings, first-use behavior, quantity boundaries and opening the displayed comparison without overwriting saved work. [Current interface checks](docs/evidence/TASK-FIRST-UI-QA.md) distinguish automated checks from actual browser observations.
 
-Actual browser verification used a custom two-item, eight-offer CSV request with an exact selected total of **USD 66.00**. Revision 6 was approved and its exported receipt retained the saved reason. Changing a requested quantity to 24 created revision 7; reverting to 23 created revision 8, which remained unapproved after reload, while the earlier receipt stayed in history. These are synthetic functional checks, not business acceptance, savings or a complete accessibility audit.
+An earlier online-v2 browser verification used a custom two-item, eight-offer CSV request with an exact selected total of **USD 66.00**. Revision 6 was approved and its exported receipt retained the saved reason. Changing a requested quantity to 24 created revision 7; reverting to 23 created revision 8, which remained unapproved after reload, while the earlier receipt stayed in history. These retained synthetic workflow checks are separate from the current opening-interface checks above; they are not business acceptance, savings or a complete accessibility audit.
 
-[Desktop browser evidence](docs/evidence/desktop-decision.jpg) · [Mobile browser evidence](docs/evidence/mobile-decision.jpg) · [Synthetic exported receipt](docs/evidence/synthetic-browser-receipt.json)
+[Earlier desktop browser evidence](docs/evidence/desktop-decision.jpg) · [Earlier mobile browser evidence](docs/evidence/mobile-decision.jpg) · [Synthetic exported receipt](docs/evidence/synthetic-browser-receipt.json)
 
 For an inspectable engineering evaluation beyond the regression suite, run:
 
@@ -196,6 +196,6 @@ MIT licensed. No third-party runtime assets or customer records are included.
 
 ## Earlier visual redesign
 
-An earlier design followed two inspected Cosmos references: [Swiss grid structure](https://www.cosmos.so/e/1795378467) and [an editorial works index](https://www.cosmos.so/e/1312667708). Its ivory ledger, editorial type and folio metadata are preserved in historical screenshots and [source-to-decision notes](docs/DESIGN-SOURCES.md). They do not describe the current opening experience; see [current design decisions](docs/DESIGN.md).
+An earlier design followed two inspected Cosmos references: [Swiss grid structure](https://www.cosmos.so/e/1795378467) and [an editorial works index](https://www.cosmos.so/e/1312667708). Its ivory ledger, editorial type and folio metadata are preserved in [historical screenshots and workflow findings](docs/evidence/COSMOS-REDESIGN-QA.md); its references are summarized under [superseded design sources](docs/DESIGN-SOURCES.md#superseded-references). They do not describe the current opening experience; see [current design decisions](docs/DESIGN.md).
 
-The earlier Lifemed-inspired glass interface, Manrope font, original glass image and Three.js implementation remain in the repository as historical assets with their licenses. They are not loaded by the current app. Earlier `redesign-*` screenshots and `motion.gif` show that superseded version, not the current ledger. Domain rules, user data, storage and calculation behavior are preserved.
+The earlier Lifemed-inspired glass interface, Manrope font, original glass image and Three.js implementation remain in the repository as historical assets with their licenses. They are not loaded by the current app. Earlier `redesign-*` screenshots and `motion.gif` show that superseded version, not the shipped task-first interface. Domain rules, user data, storage and calculation behavior are preserved.

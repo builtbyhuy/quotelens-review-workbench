@@ -10,7 +10,7 @@ Created 21 October 2026. Independent product work by Hồ Khắc Huy with AI cod
 
 ## The problem and useful outcome
 
-A quoted unit price can hide the cost of the packs actually purchased. A minimum order may increase the purchase, a delivery fee may change the lowest total, or the apparently attractive offer may be expired, unavailable or duplicated. An approval is also easy to misread when it belongs to a previous set of inputs.
+A quoted unit price can hide the cost of the packs actually purchased. A minimum order may increase the purchase, a delivery fee may change the lowest total, or the apparently attractive offer may be expired, unavailable or duplicated. An approval is also easy to misread when it belongs to a previous set of inputs. This product compares whole-pack goods costs plus the entered delivery fee for each offer line, before tax; it does not calculate FX or shared supplier-order freight.
 
 QuoteLens connects a reviewer-authored request to supplier offers, exact whole-pack totals, visible exclusions and warnings, source inspection and a revision-specific review record. The useful result is a decision that can be traced to its inputs. It does not decide whether an item meets a specification or negotiate commercial terms.
 
@@ -73,7 +73,7 @@ The current suite recorded on 21 October 2026 passes **32 checks: 23 core tests 
 
 A separate Codex-agent integration review exercised actual application handlers using synthetic inputs; its harness is in the surrounding job-hunt validation workspace, not included as a repository test. It must be distinguished from the 23 executable core tests and from a complete browser acceptance pass.
 
-Actual browser verification observed a novel two-item, eight-offer CSV request producing a selected total of USD 66.00. Revision 6 was approved; its exported receipt preserved the saved reviewer reason. Changing the requested quantity to 24 produced revision 7, then reverting to 23 produced revision 8. After reload, revision 8 remained unapproved and one historical receipt remained. The observed note-saving defect was repaired with explicit Save note handling and serialized writes before this check passed.
+An earlier online-v2 browser verification observed a novel two-item, eight-offer CSV request producing a selected total of USD 66.00. Revision 6 was approved; its exported receipt preserved the saved reviewer reason. Changing the requested quantity to 24 produced revision 7, then reverting to 23 produced revision 8. After reload, revision 8 remained unapproved and one historical receipt remained. The observed note-saving defect was repaired with explicit Save note handling and serialized writes before this check passed. These captures retain their earlier interface; current first-use observations are separately recorded in [TASK-FIRST-UI-QA.md](evidence/TASK-FIRST-UI-QA.md).
 
 These are synthetic functional observations, not a customer saving or business acceptance. They do not prove IndexedDB behavior in every browser, complete accessibility or production readiness. Evidence: [desktop](evidence/desktop-decision.jpg), [mobile](evidence/mobile-decision.jpg), [synthetic exported browser receipt](evidence/synthetic-browser-receipt.json).
 
@@ -100,7 +100,7 @@ Give an unfamiliar purchasing reviewer their own small request and supplier CSV.
 
 ## Current task-first interface
 
-The first viewport states the job directly: compare supplier quotes for the actual purchase cost. Its fictional 120-bolt request is interactive and runs through the production calculation engine. At 120, Birch's order costs USD 27.40 and Oak's costs USD 40.00. Trying 100 reverses the result: Oak USD 22.00, Birch USD 23.00. At the 101-unit pack boundary Birch becomes USD 25.20 versus Oak USD 40.00. Opening the comparison saves the exact current quantity and offers in a fresh editable workspace; trying quantities alone does not write data.
+The first viewport states the job directly: compare supplier quotes using whole-pack costs and entered delivery fees per offer line. Its fictional 120-bolt request is interactive and runs through the production calculation engine. At 120, Birch's order costs USD 27.40 and Oak's costs USD 40.00. Trying 100 reverses the result: Oak USD 22.00, Birch USD 23.00. At the 101-unit pack boundary Birch becomes USD 25.20 versus Oak USD 40.00. Those totals exclude tax, FX and shared supplier-order freight. Opening the comparison saves the exact current quantity and offers in a fresh editable workspace; trying quantities alone does not write data.
 
 The interface uses locally hosted Adobe Source Sans 3, navy/blue actions, cool white surfaces and aligned supplier/cost records. At 390px, supplier rows become compact records with totals at right. The input stays focused while results change; invalid quantities show an inline error and cannot open a misleading workspace. Saved comparisons remain visible below the preview instead of being silently reopened at startup.
 

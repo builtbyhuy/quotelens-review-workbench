@@ -1,6 +1,6 @@
 # Online architecture and reviewer guide
 
-This document describes the current browser product in `dist/`, including the purchasing-ledger interface. The **v2** name identifies its domain and portable-data contract, not a hosting release number. [ARCHITECTURE.md](ARCHITECTURE.md) describes the separate historical Python/SQLite prototype.
+This document describes the current browser product in `dist/`, including its task-first overview and request/offers/decision/history workspace. The **v2** name identifies its domain and portable-data contract, not a hosting release number. [ARCHITECTURE.md](ARCHITECTURE.md) describes the separate historical Python/SQLite prototype.
 
 ## Follow one decision through the code
 
@@ -17,12 +17,14 @@ User-created request + manual offers / mapped CSV
 | --- | --- |
 | [`dist/index.html`](../dist/index.html) | Loads the calculation core, store and application in order; provides the dialog, file inputs and status region. |
 | [`dist/core.js`](../dist/core.js) | Dependency-free UMD module shared by the browser and Node tests. Validates workspaces, parses/maps CSV, evaluates offers, calculates totals, creates receipts and validates portable backups. It performs no rendering, storage or network requests. |
-| [`dist/app.js`](../dist/app.js) | Owns the in-memory workspace library, event handlers, escaped rendering, revision changes, explicit note saving, review dialogs, download actions and serialized storage writes. |
+| [`dist/app.js`](../dist/app.js) | Owns the task-first overview, fictional first-use comparison, in-memory workspace library, event handlers, escaped rendering, revision changes, explicit note saving, review dialogs, download actions and serialized storage writes. |
 | [`dist/store.js`](../dist/store.js) | IndexedDB adapter: `all`, `put` and `remove`. Writes resolve on transaction completion, not merely on a successful individual request. |
-| [`dist/ledger.css`](../dist/ledger.css), [`dist/interface-motion.js`](../dist/interface-motion.js) | Responsive ledger presentation and short state-linked feedback. Motion respects reduced-motion preference and does not gate calculations or storage. |
+| [`dist/ledger.css`](../dist/ledger.css), [`dist/interface-motion.js`](../dist/interface-motion.js) | Current responsive task-first presentation and short state-linked feedback. The CSS filename is retained from the earlier ledger; it does not identify the active visual direction. Motion respects reduced-motion preference and does not gate calculations or storage. |
 | [`dist/guide.html`](../dist/guide.html), [`dist/case-study.html`](../dist/case-study.html) | Published usage, decision rules, evidence and limitations. They do not implement an additional backend. |
 
 The earlier glass hero and Three.js files remain historical assets. The current entry point does not load them. Source and rights decisions are recorded in [DESIGN-SOURCES.md](DESIGN-SOURCES.md).
+
+On startup, `activeId` is deliberately `null` after the saved library is loaded: the app explains the comparison before reopening any saved request. Its fictional preview runs through the production core but does not persist while quantities change. **Compare my quotes** creates an empty workspace; **Open this comparison** saves the preview's exact current quantity and terms as a separate workspace. Existing saved work remains available on the overview.
 
 ## Import is a boundary, not a guess
 
@@ -59,11 +61,11 @@ Public core limits include 200 request items, 2,000 offers, 64 CSV columns, 2 Mi
 
 ## Inspect the recorded end-to-end flow
 
-Serve `dist/` using the [README instructions](../README.md#run-the-online-version-locally). The current redesign's [browser record](evidence/COSMOS-REDESIGN-QA.md) includes the input [CSV](evidence/cosmos-functional-offers.csv), exported [receipt](evidence/cosmos-functional-receipt.json) and working-screen captures.
+Serve `dist/` using the [README instructions](../README.md#run-the-online-version-locally). [Current task-first browser findings](evidence/TASK-FIRST-UI-QA.md) cover first-use navigation, interactive quantities, errors and preview-to-workspace handoff. A separate [recorded workflow from the earlier ledger interface](evidence/COSMOS-REDESIGN-QA.md) includes its input [CSV](evidence/cosmos-functional-offers.csv), exported [receipt](evidence/cosmos-functional-receipt.json) and historical working-screen captures. The earlier workflow was not silently rerun or recaptured under the new appearance.
 
 That recorded synthetic run created a EUR request for 37 retaining rings and 11 seals, with a seven-day lead constraint, then mapped six offers. The reviewer inspected physical source row 3, selected two offers totaling **EUR 60.95**, saved a reason and approved revision 7. Increasing ring quantity to 38 produced revision 8: the whole-pack total stayed unchanged, but approved exports became unavailable. After reload, the reason and historical revision 7 receipt remained. This tests input/review identity beyond a changed price; it does not demonstrate customer savings or adoption.
 
-The reproducible command `node --test tests/core.test.cjs tests/ui-persistence.test.cjs` covers the core and four targeted UI regressions. The UI harness stubs surrounding DOM/storage behavior; it is not a real-browser or IndexedDB compatibility suite. Browser evidence covers the recorded flows, not complete accessibility, human usability or every failure mode.
+The reproducible command `node --test tests/core.test.cjs tests/ui-persistence.test.cjs` covers 23 core tests and nine targeted UI regressions. The initial four UI regressions cover note handling, delayed render safety, serialized writes and selected-offer warning scope; five later checks cover the first-use behavior described above. The UI harness stubs surrounding DOM/storage behavior; it is not a real-browser or IndexedDB compatibility suite. The [recorded 32-check result](evidence/TASK-FIRST-UI-QA.md) and browser observations retain their stated execution scope, not complete accessibility, human usability or every failure mode.
 
 ## Trade-off: local review instead of a shared approval service
 
