@@ -2,9 +2,11 @@
 
 Created 21 October 2026. Independent product work by Hồ Khắc Huy with AI coding assistance. All examples and verification inputs are synthetic. No customer adoption, business savings, procurement deployment or production readiness is claimed.
 
-**Product:** https://quotelens-huy.hokhachuy1234.chatgpt.site  
-**Guide:** `dist/guide.html`  
-**Public case study:** `dist/case-study.html`
+**Product:** [Online workbench](https://builtbyhuy.github.io/quotelens-review-workbench/)
+
+**Guide:** [Workflow and limits](https://builtbyhuy.github.io/quotelens-review-workbench/guide.html)
+
+**Public case study:** [Problem, decisions and evidence](https://builtbyhuy.github.io/quotelens-review-workbench/case-study.html)
 
 ## The problem and useful outcome
 
@@ -14,7 +16,7 @@ QuoteLens connects a reviewer-authored request to supplier offers, exact whole-p
 
 ## What changed from the local prototype
 
-The legacy Python/SQLite application used a fixed synthetic four-item request. It remains in the repository as a historical local prototype with its own run instructions and tests. The online v2 product starts with an empty workspace and accepts arbitrary user-created request items, manual offers and mapped CSV columns. Its browser storage, monetary engine, schema and portable receipts are separate from the earlier server implementation.
+The legacy Python/SQLite application used a fixed synthetic four-item request. It remains in the repository as a historical local prototype with its own run instructions and tests. The current online product opens with an interactive fictional comparison and accepts arbitrary user-created request items, manual offers and mapped CSV columns. Users can start an empty comparison or open the displayed example as a new editable workspace without overwriting saved work. Its browser storage, monetary engine, schema and portable receipts are separate from the earlier server implementation.
 
 This distinction matters: opening an example is a tour, while creating a novel request and importing a supplier-shaped file exercises the actual product boundary. Fixture totals from v1 do not certify v2.
 
@@ -67,7 +69,7 @@ This keeps the app accessible through static hosting without API credentials or 
 
 ## Verification and its limits
 
-On 21 October 2026, `node --test tests/core.test.cjs tests/ui-persistence.test.cjs` passed **27 tests: 23 core tests plus four UI regression tests**. Core checks cover the browser UMD boundary, arbitrary novel requests, MOQ and whole-pack rounding, delivery-fee ranking, exact large money, inclusive expiry/lead constraints, missing-data warnings, duplicates, identity and currency failures, generic CSV import, safe exports, immutable receipt snapshots and hostile backup rejection. The four UI regressions cover explicit Save note handling, delayed-render note preservation, serialized revision writes and warning scope for selected offers.
+The current suite recorded on 21 October 2026 passes **32 checks: 23 core tests plus nine targeted UI regressions** with `node --test tests/core.test.cjs tests/ui-persistence.test.cjs`. Core checks cover the browser UMD boundary, arbitrary novel requests, MOQ and whole-pack rounding, delivery-fee ranking, exact large money, inclusive expiry/lead constraints, missing-data warnings, duplicates, identity and currency failures, generic CSV import, safe exports, immutable receipt snapshots and hostile backup rejection. The initial online release passed 27 checks, including four UI regressions for explicit Save note handling, delayed-render note preservation, serialized revision writes and warning scope for selected offers. The task-first revision retained those checks and added five UI regressions; their scope and actual browser observations are recorded in [TASK-FIRST-UI-QA.md](evidence/TASK-FIRST-UI-QA.md).
 
 A separate Codex-agent integration review exercised actual application handlers using synthetic inputs; its harness is in the surrounding job-hunt validation workspace, not included as a repository test. It must be distinguished from the 23 executable core tests and from a complete browser acceptance pass.
 
