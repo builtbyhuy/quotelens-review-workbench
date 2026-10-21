@@ -21,6 +21,10 @@ Read the [current domain rules](docs/CORE.md) and [v2 case study](docs/CASE-STUD
 
 ## Use the browser workflow
 
+The current opening renders three curved glass quote sheets in real 3D, with a pause control and a static reduced-motion fallback. Tab changes and workflow panels receive restrained visual feedback; calculation and storage do not wait for animation. See [motion design and limitations](docs/MOTION-ENGINE.md) and [project-fit reference notes](docs/DESIGN-SOURCES.md).
+
+![Actual browser recording of the live glass](docs/evidence/motion.gif)
+
 1. Create a workspace and choose the review date and currency.
 2. Add your request items, matching IDs, whole quantities and optional maximum lead times.
 3. Add manual offers or import a CSV and map its columns.
