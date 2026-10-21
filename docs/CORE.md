@@ -1,0 +1,35 @@
+# QuoteLens online domain core
+
+`dist/core.js` is a dependency-free UMD module: browsers receive `globalThis.QL`; Node receives `module.exports`. It implements the API in `V2-CONTRACT.md` and never writes storage, mutates a workspace, performs network requests, or renders input as HTML.
+
+## Decision rules
+
+- Requests and offers are arbitrary user data. There is no seeded supplier, item, price or winning offer in the engine. Item IDs match exactly; supplier + quote ID + item ID identifies a quote line.
+- Whole packs purchased = `max(ceil(request quantity / pack size), minimum packs)`. Total = whole packs × pack price + the delivery fee **for that offer line**. MOQ and total available stock are pack counts. There is no supplier-order shipping aggregation, tax inference or FX conversion.
+- Money input is a nonnegative decimal **string**, with up to two fractional digits and 15 integer digits. All arithmetic uses `BigInt` minor units; output always has two decimal places, including VND. Numeric money, exponent notation, grouped numbers, negatives and excess decimals are rejected rather than rounded. A zero price or fee is allowed when explicitly supplied.
+- Stock `null` means not supplied, with an availability-unverified warning. Stock zero is explicit unavailability. Lead time `null` and expiry `""` likewise produce unverified warnings. Unknown lead time blocks an item with a maximum lead-time constraint. Known lead time must be at or below the requested maximum. Valid-until is an inclusive ISO calendar date compared with the explicit workspace review date.
+- Both conflicting and exact duplicate quote identities block all involved rows. Exact duplicates must be removed or have a genuinely distinct quote reference; they are never silently ranked. Duplicate offer IDs and request IDs invalidate the workspace.
+- `analyze()` never chooses a selection automatically. `cheapest` is the eligible offer with the lowest actual whole-pack total; a tie uses source array order. `selected` contains the explicitly selected evaluation, including a blocked evaluation for explanation. `total` is the eligible selected subtotal; it is **not** a complete approved total until `complete` is true. Unselected invalid offers remain visible without being included in the subtotal.
+- Imported strings are data. Backup validation allows bounded ordinary HTML-like text; the UI must display it through text nodes or escaping. CSV export neutralizes text cells beginning with `=`, `+`, `-` or `@`, including preceding whitespace/control characters, by adding an apostrophe before standard CSV quoting.
+
+## CSV interface
+
+`parseCsv(text)` returns `{headers, rows, errors}`. A row contains its original physical starting `line`, a header-to-field `values` object, and original decoded `raw` field array. UTF-8 BOM, CRLF/LF/CR records, quoted multiline fields, commas and escaped double quotes work. Blank physical records are skipped without losing line numbers. Header surrounding whitespace is trimmed; fields in `raw` retain their original content. Empty, duplicate, dangerous or oversized headers, incorrect column counts, unexpected quotes, NUL, truncated quotes and bounded-limit violations reject the entire parse without partial rows.
+
+`importCsv(text, mapping, filename)` maps canonical fields to actual CSV headers. Required mappings: `itemId`, `supplier`, `packSize`, `packPrice`. Optional mappings: `quoteId`, `minPacks`, `stockPacks`, `leadDays`, `validUntil`, `currency`, `deliveryFee`. If no currency column is mapped, `mapping._currency` must explicitly contain the workspace currency; there is no inferred currency. A mapped but blank currency is an error. Unmapped fields default to quote ID empty, minimum packs 1, stock/lead unknown, expiry empty and delivery fee zero. Supplied optional mapped values are validated rather than silently replaced. Any malformed structure, mapping or row rejects the whole import with zero offers. No imported rows are appended by the core.
+
+Original source is `{filename,line,raw}`. CSV `raw` is the complete original decoded field array, including unmapped columns. A manual source may use `line:null` and `raw` as a bounded plain object of original scalar values, or a string array.
+
+## Approvals and portable backups
+
+`fingerprint(workspace)` returns a deterministic canonical **content string**, prefixed `ql2-content:`. It includes schema version, workspace ID, title, date, currency, requests, offers, source evidence, selections and notes. Object key ordering is normalized; array order matters. Revision, import errors and history are excluded. This is not a hash, signature or cryptographic integrity guarantee.
+
+`createReceipt(workspace, nowISO)` throws unless the review is complete and `nowISO` is a valid ISO timestamp with timezone. It returns kind `QuoteLensDecision`, schema version 2, identity/approval metadata, exact total, selected lines with full request/offer/source copies and reason, and a deep snapshot. A reason is the item note, otherwise the lowest-total default or an explicit-reviewer-selection default. `snapshot.history` is empty to prevent recursive archive growth. Returned values are independent copies; callers own persistence and repeat-approval reuse. An old receipt remains historical when current fingerprint changes.
+
+`validateWorkspace(input)` strictly validates portable JSON object shape, schema, bounded text/counts, IDs/references, source fields, selections, notes, receipts and snapshot-line reconciliation. Notes are a plain `{key:string}` map; item-ID keys supply selection reasons. Unknown schema fields, dangerous prototype keys anywhere, accessors, exotic objects, cycles/shared references, sparse arrays, unsafe/noninteger numbers and excessive nesting are rejected. History contains only receipt objects produced by this schema. Receipt comparison detects inconsistent snapshots or lines; a fully rewritten consistent backup is still user-supplied data, not authenticated evidence.
+
+Practical hard limits are public in `QL.LIMITS`: 200 request items, 2,000 offers/data rows, 64 CSV columns, 8,192 characters per original field, 2 MiB CSV characters, 8 MiB portable JSON characters, 50 history receipts, 200 notes with 4,000 characters each, numeric counts up to 1,000,000,000 and lead constraints up to 36,500 days. Computed units must stay within JavaScript's safe integer range; monetary totals use BigInt and may exceed it. Large receipt history may reach the total backup-size cap before the receipt-count cap.
+
+## Running verification
+
+Run `node --test tests/core.test.cjs` with Node 18 or newer. Tests use new arbitrary repair-procurement inputs, not the legacy sample CSVs, and check UMD browser operation, MOQ/pack rounding, line delivery fees, exact large money, inclusive expiry/lead limits, missing-data warnings, duplicate identities, currency/identity failures, atomic generic CSV parsing/import, formula-safe exports, content fingerprints, immutable portable approvals and hostile backup/bounds rejection.

@@ -1,0 +1,28 @@
+{
+  "title": "Synthetic workshop replenishment — independent QA",
+  "date": "2026-10-21",
+  "currency": "USD",
+  "request": [
+    {"id":"clamp-23","label":"Cable clamps","quantity":23,"unit":"each","maxLeadDays":7},
+    {"id":"sleeve-37","label":"Protective sleeve","quantity":37,"unit":"metre","maxLeadDays":null}
+  ],
+  "mapping": {
+    "itemId":"Part reference", "supplier":"Vendor", "quoteId":"Reference",
+    "packSize":"Units per box", "packPrice":"Box cost", "minPacks":"Minimum boxes",
+    "stockPacks":"Stock boxes", "leadDays":"Days", "validUntil":"Expires",
+    "currency":"Money", "deliveryFee":"Line freight", "_currency":"USD"
+  },
+  "expected": {
+    "clamp-23": {"supplier":"Beta","packs":4,"units":24,"overage":1,"goodsCost":"24.00","deliveryCost":"1.00","total":"25.00"},
+    "sleeve-37": {"supplier":"Delta","packs":4,"units":40,"overage":3,"goodsCost":"40.00","deliveryCost":"1.00","total":"41.00"},
+    "selectedTotal":"66.00",
+    "checks":[
+      "Alpha needs four boxes because of MOQ, despite quantity needing only three: 40 units and USD 32.00.",
+      "Gamma goods cost is USD 39.00, below Delta USD 40.00, but USD 5.00 row freight makes Gamma total USD 44.00 and changes the winner.",
+      "A quote expiring exactly on review date remains eligible.",
+      "Expired and insufficient-stock offers remain ineligible despite low nominal prices.",
+      "Missing stock, lead and expiry remain explicitly unverified warnings for the unconstrained sleeve request.",
+      "A clamp offer with missing lead is blocked because the request has a seven-day limit."
+    ]
+  }
+}

@@ -1,14 +1,21 @@
-name: Functional checks
+name: Product checks
 on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  test:
+  browser-product-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/core.test.cjs tests/ui-persistence.test.cjs
+  legacy-python:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Review, persistence and HTTP contracts
-        run: python -m unittest discover -s tests -v
+      - run: python -m unittest discover -s tests -p 'test_*.py'
