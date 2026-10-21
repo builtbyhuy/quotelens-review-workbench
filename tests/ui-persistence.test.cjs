@@ -45,6 +45,23 @@ async function harness() {
   };
 }
 
+test('a missing calculation script shows a recoverable error without reading or mutating saved work', async () => {
+  const app = { innerHTML: '' }, toast = { textContent: '', hidden: true }, dialog = { addEventListener() {} };
+  let storageReads = 0, storageWrites = 0;
+  const document = { getElementById(id) { return id === 'app' ? app : id === 'dialog' ? dialog : id === 'toast' ? toast : null; },
+    querySelector() { return null; }, addEventListener() {} };
+  const context = vm.createContext({ document, setTimeout() { return 0; }, clearTimeout() {},
+    QuoteStore: { all: async () => { storageReads++; return []; }, put() { storageWrites++; } } });
+  vm.runInContext(fs.readFileSync(require.resolve('../dist/app.js'), 'utf8'), context);
+  await tick();
+  assert.match(app.innerHTML, /Quote comparison could not start/);
+  assert.match(app.innerHTML, /href="\.\/">Reload QuoteLens/);
+  assert.match(app.innerHTML, /href="guide.html">Read the guide/);
+  assert.match(toast.textContent, /calculation engine did not load/);
+  assert.equal(toast.hidden, false);
+  assert.equal(storageReads, 0); assert.equal(storageWrites, 0);
+});
+
 test('opening the app explains the comparison before reopening any saved request', async () => {
   const h = await harness();
   assert.equal(h.initialActiveId, null);

@@ -22,7 +22,7 @@ Reproducible automated checks:
 node --test tests/core.test.cjs tests/ui-persistence.test.cjs
 ```
 
-**31 passed: 23 core + 8 UI.** Four new UI regressions cover startup without data mutation, exact 120/100/101 outcomes, invalid empty/0/fraction/>300 rejection and handoff of the exact displayed quantity/terms into a distinct workspace while preserving the existing one. The harness runs core and UI in one browser-equivalent JavaScript realm; strict portable-file object validation remains unchanged.
+**32 passed: 23 core + 9 UI.** Five new UI regressions cover missing-calculation-script recovery, startup without data mutation, exact 120/100/101 outcomes, invalid empty/0/fraction/>300 rejection and handoff of the exact displayed quantity/terms into a distinct workspace while preserving the existing one. A missing-core regression also executes the actual bootstrap without `QL`: it verifies a visible reload/guide recovery message, no second render exception and no storage reads/writes. This was a harness check, not a browser network-interception test. The harness runs core and UI in one browser-equivalent JavaScript realm; strict portable-file object validation remains unchanged.
 
 ## Evidence and limits
 
