@@ -11,6 +11,7 @@ jobs:
         with:
           node-version: '22'
       - run: node --test tests/core.test.cjs tests/ui-persistence.test.cjs
+      - run: node scripts/evaluate-corpus.cjs
   legacy-python:
     runs-on: ubuntu-latest
     steps:

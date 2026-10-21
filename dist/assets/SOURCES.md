@@ -32,3 +32,7 @@ An original AI-generated decorative sculpture produced with the built-in image g
 ## Social preview — 21 October 2026
 
 `social-preview.jpg` was replaced for the Cosmos redesign on 21 October 2026. It is an unaltered 1280×720 CUA-controlled browser capture of the working local preview of the source being released. It shows a first-visit interface with empty local files or an explicitly fictional starting puzzle. It is not a generated mockup or evidence of customer use. The earlier glass-image sections above describe retained historical assets; the current app does not load the glass hero or Three.js. Retained third-party assets keep their separate license notices.
+
+## Reviewer case-study assets — 21 October 2026
+
+`review-record.png` is a fresh unaltered browser capture of the current local app with the previously recorded fictional EUR 60.95 workspace at revision 8. `reviewer-offers.csv` and `reviewed-receipt.json` are exact copies of the synthetic input and actual exported revision 7 receipt in `docs/evidence/cosmos-functional-*`. They contain no customer records. The case study labels their role and review date explicitly; the screenshot is evidence of product state, not artwork from a reference gallery.

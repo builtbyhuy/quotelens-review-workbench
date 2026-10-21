@@ -10,6 +10,12 @@ Independent product by [Hồ Khắc Huy](https://github.com/builtbyhuy), built w
 
 [Current mobile interface](docs/evidence/cosmos-mobile.jpg) · [Redesign browser checks](docs/evidence/COSMOS-REDESIGN-QA.md)
 
+## Start with one decision
+
+Inspect a complete synthetic review: [six original CSV offer rows](dist/assets/reviewer-offers.csv), [revision 7 receipt](dist/assets/reviewed-receipt.json), and [current browser findings](docs/evidence/COSMOS-REDESIGN-QA.md). The reviewed request is 37 rings and 11 seals, EUR, 21 October 2026, maximum lead seven days. Orbit Supply plus Documented Seals totals EUR 60.95. Increasing rings to 38 keeps that total but invalidates the earlier approval: input identity matters even without a price change.
+
+The [independent calculation comparison](docs/evidence/ENGINEERING-EVALUATION.md) covers 15 fixed synthetic cases and 33 offer rows, with a separate rational reference, handwritten expectations and revision/content controls. It is reproducible engineering evidence, not a claim of customer savings.
+
 ## Online product: your request, your offers
 
 The browser product starts with an empty workspace. Create arbitrary purchase requests, enter offers manually or map your own CSV columns, compare the whole packs you would buy, inspect the source and record the reviewed revision. The editable fictional example is a tour; it is not a fixed input requirement.
@@ -60,7 +66,13 @@ Actual browser verification used a custom two-item, eight-offer CSV request with
 
 [Desktop browser evidence](docs/evidence/desktop-decision.jpg) · [Mobile browser evidence](docs/evidence/mobile-decision.jpg) · [Synthetic exported receipt](docs/evidence/synthetic-browser-receipt.json)
 
+For an inspectable engineering evaluation beyond the regression suite, run:
 
+```sh
+node scripts/evaluate-corpus.cjs
+```
+
+The [fixed synthetic corpus and expected/actual report](docs/evidence/ENGINEERING-EVALUATION.md) use a separate rational-arithmetic pack enumerator, handwritten expected totals and explicit contract annotations. They include a countercase to nominal unit-price ranking and an unchanged-total quantity edit that still requires a new review. Run with `--write` to regenerate the Markdown/JSON evidence; no install is needed. This evaluates deterministic rules, not customer savings, usability or demand.
 
 ## Storage, limits and deliberate scope
 

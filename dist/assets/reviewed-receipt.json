@@ -1,0 +1,379 @@
+{
+  "kind": "QuoteLensDecision",
+  "schemaVersion": 2,
+  "id": "decision-4cbe333d-e3af-4a30-8f9f-a54e71c1082d",
+  "workspaceId": "workspace-d586d482-508e-46da-b8ce-82cc2d3e0f86",
+  "title": "Interface check · telescope supplies",
+  "revision": 7,
+  "fingerprint": "ql2-content:{\"currency\":\"EUR\",\"date\":\"2026-10-21\",\"id\":\"workspace-d586d482-508e-46da-b8ce-82cc2d3e0f86\",\"notes\":{\"seal\":\"Synthetic interface check: documented stock and lead time satisfy the request.\"},\"offers\":[{\"currency\":\"EUR\",\"deliveryFee\":\"3.19\",\"id\":\"offer-3dc23e03-5e6f-4aec-ba9e-b5d76c281768\",\"itemId\":\"ring\",\"leadDays\":4,\"minPacks\":1,\"packPrice\":\"12.37\",\"packSize\":8,\"quoteId\":\"CM-4\",\"source\":{\"filename\":\"functional-offers.csv\",\"line\":2,\"raw\":[\"ring\",\"Compact Mechanics\",\"8\",\"12.37\",\"CM-4\",\"1\",\"50\",\"4\",\"2026-10-21\",\"EUR\",\"3.19\"]},\"stockPacks\":50,\"supplier\":\"Compact Mechanics\",\"validUntil\":\"2026-10-21\"},{\"currency\":\"EUR\",\"deliveryFee\":\"1.00\",\"id\":\"offer-33453809-ab48-423c-9447-74f930788e60\",\"itemId\":\"ring\",\"leadDays\":4,\"minPacks\":1,\"packPrice\":\"13.00\",\"packSize\":10,\"quoteId\":\"OS-7\",\"source\":{\"filename\":\"functional-offers.csv\",\"line\":3,\"raw\":[\"ring\",\"Orbit Supply\",\"10\",\"13.00\",\"OS-7\",\"1\",\"50\",\"4\",\"2026-10-21\",\"EUR\",\"1.00\"]},\"stockPacks\":50,\"supplier\":\"Orbit Supply\",\"validUntil\":\"2026-10-21\"},{\"currency\":\"EUR\",\"deliveryFee\":\"2.00\",\"id\":\"offer-8008efc9-83dc-4ab4-8b3f-204344380f8a\",\"itemId\":\"ring\",\"leadDays\":4,\"minPacks\":1,\"packPrice\":\"120.00\",\"packSize\":100,\"quoteId\":\"BS-9\",\"source\":{\"filename\":\"functional-offers.csv\",\"line\":4,\"raw\":[\"ring\",\"Bulk Shop\",\"100\",\"120.00\",\"BS-9\",\"1\",\"3\",\"4\",\"2026-10-21\",\"EUR\",\"2.00\"]},\"stockPacks\":3,\"supplier\":\"Bulk Shop\",\"validUntil\":\"2026-10-21\"},{\"currency\":\"EUR\",\"deliveryFee\":\"0.00\",\"id\":\"offer-b1dab255-e5ea-4925-96cc-e2ff46fd47ab\",\"itemId\":\"ring\",\"leadDays\":1,\"minPacks\":1,\"packPrice\":\"0.01\",\"packSize\":1,\"quoteId\":\"EX-1\",\"source\":{\"filename\":\"functional-offers.csv\",\"line\":5,\"raw\":[\"ring\",\"Expired Sample\",\"1\",\"0.01\",\"EX-1\",\"1\",\"10000\",\"1\",\"2026-10-20\",\"EUR\",\"0.00\"]},\"stockPacks\":10000,\"supplier\":\"Expired Sample\",\"validUntil\":\"2026-10-20\"},{\"currency\":\"EUR\",\"deliveryFee\":\"1.75\",\"id\":\"offer-eeca1423-cfb9-4cc3-a1cd-90a82cb643f9\",\"itemId\":\"seal\",\"leadDays\":5,\"minPacks\":2,\"packPrice\":\"3.10\",\"packSize\":6,\"quoteId\":\"DS-5\",\"source\":{\"filename\":\"functional-offers.csv\",\"line\":6,\"raw\":[\"seal\",\"Documented Seals\",\"6\",\"3.10\",\"DS-5\",\"2\",\"30\",\"5\",\"2026-10-21\",\"EUR\",\"1.75\"]},\"stockPacks\":30,\"supplier\":\"Documented Seals\",\"validUntil\":\"2026-10-21\"},{\"currency\":\"EUR\",\"deliveryFee\":\"0.00\",\"id\":\"offer-33ff7f5d-4335-4cd4-999d-49ab28501593\",\"itemId\":\"seal\",\"leadDays\":null,\"minPacks\":1,\"packPrice\":\"0.65\",\"packSize\":1,\"quoteId\":\"UT-2\",\"source\":{\"filename\":\"functional-offers.csv\",\"line\":7,\"raw\":[\"seal\",\"Unknown Terms\",\"1\",\"0.65\",\"UT-2\",\"1\",\"\",\"\",\"\",\"EUR\",\"0.00\"]},\"stockPacks\":null,\"supplier\":\"Unknown Terms\",\"validUntil\":\"\"}],\"request\":[{\"id\":\"ring\",\"label\":\"Telescope retaining rings\",\"maxLeadDays\":7,\"quantity\":37,\"unit\":\"rings\"},{\"id\":\"seal\",\"label\":\"Dust seals\",\"maxLeadDays\":7,\"quantity\":11,\"unit\":\"seals\"}],\"schemaVersion\":2,\"selections\":{\"ring\":\"offer-33453809-ab48-423c-9447-74f930788e60\",\"seal\":\"offer-eeca1423-cfb9-4cc3-a1cd-90a82cb643f9\"},\"title\":\"Interface check · telescope supplies\"}",
+  "approvedAt": "2026-10-21T08:22:15.897Z",
+  "currency": "EUR",
+  "total": "60.95",
+  "lines": [
+    {
+      "itemId": "ring",
+      "itemLabel": "Telescope retaining rings",
+      "quantity": 37,
+      "unit": "rings",
+      "offerId": "offer-33453809-ab48-423c-9447-74f930788e60",
+      "supplier": "Orbit Supply",
+      "quoteId": "OS-7",
+      "packs": 4,
+      "units": 40,
+      "overage": 3,
+      "goodsCost": "52.00",
+      "deliveryCost": "1.00",
+      "total": "53.00",
+      "currency": "EUR",
+      "source": {
+        "filename": "functional-offers.csv",
+        "line": 3,
+        "raw": [
+          "ring",
+          "Orbit Supply",
+          "10",
+          "13.00",
+          "OS-7",
+          "1",
+          "50",
+          "4",
+          "2026-10-21",
+          "EUR",
+          "1.00"
+        ]
+      },
+      "reason": "Lowest eligible whole-pack purchase total.",
+      "request": {
+        "id": "ring",
+        "label": "Telescope retaining rings",
+        "quantity": 37,
+        "unit": "rings",
+        "maxLeadDays": 7
+      },
+      "offer": {
+        "id": "offer-33453809-ab48-423c-9447-74f930788e60",
+        "itemId": "ring",
+        "supplier": "Orbit Supply",
+        "quoteId": "OS-7",
+        "packSize": 10,
+        "packPrice": "13.00",
+        "minPacks": 1,
+        "stockPacks": 50,
+        "leadDays": 4,
+        "validUntil": "2026-10-21",
+        "currency": "EUR",
+        "deliveryFee": "1.00",
+        "source": {
+          "filename": "functional-offers.csv",
+          "line": 3,
+          "raw": [
+            "ring",
+            "Orbit Supply",
+            "10",
+            "13.00",
+            "OS-7",
+            "1",
+            "50",
+            "4",
+            "2026-10-21",
+            "EUR",
+            "1.00"
+          ]
+        }
+      }
+    },
+    {
+      "itemId": "seal",
+      "itemLabel": "Dust seals",
+      "quantity": 11,
+      "unit": "seals",
+      "offerId": "offer-eeca1423-cfb9-4cc3-a1cd-90a82cb643f9",
+      "supplier": "Documented Seals",
+      "quoteId": "DS-5",
+      "packs": 2,
+      "units": 12,
+      "overage": 1,
+      "goodsCost": "6.20",
+      "deliveryCost": "1.75",
+      "total": "7.95",
+      "currency": "EUR",
+      "source": {
+        "filename": "functional-offers.csv",
+        "line": 6,
+        "raw": [
+          "seal",
+          "Documented Seals",
+          "6",
+          "3.10",
+          "DS-5",
+          "2",
+          "30",
+          "5",
+          "2026-10-21",
+          "EUR",
+          "1.75"
+        ]
+      },
+      "reason": "Synthetic interface check: documented stock and lead time satisfy the request.",
+      "request": {
+        "id": "seal",
+        "label": "Dust seals",
+        "quantity": 11,
+        "unit": "seals",
+        "maxLeadDays": 7
+      },
+      "offer": {
+        "id": "offer-eeca1423-cfb9-4cc3-a1cd-90a82cb643f9",
+        "itemId": "seal",
+        "supplier": "Documented Seals",
+        "quoteId": "DS-5",
+        "packSize": 6,
+        "packPrice": "3.10",
+        "minPacks": 2,
+        "stockPacks": 30,
+        "leadDays": 5,
+        "validUntil": "2026-10-21",
+        "currency": "EUR",
+        "deliveryFee": "1.75",
+        "source": {
+          "filename": "functional-offers.csv",
+          "line": 6,
+          "raw": [
+            "seal",
+            "Documented Seals",
+            "6",
+            "3.10",
+            "DS-5",
+            "2",
+            "30",
+            "5",
+            "2026-10-21",
+            "EUR",
+            "1.75"
+          ]
+        }
+      }
+    }
+  ],
+  "snapshot": {
+    "schemaVersion": 2,
+    "id": "workspace-d586d482-508e-46da-b8ce-82cc2d3e0f86",
+    "title": "Interface check · telescope supplies",
+    "date": "2026-10-21",
+    "currency": "EUR",
+    "revision": 7,
+    "request": [
+      {
+        "id": "ring",
+        "label": "Telescope retaining rings",
+        "quantity": 37,
+        "unit": "rings",
+        "maxLeadDays": 7
+      },
+      {
+        "id": "seal",
+        "label": "Dust seals",
+        "quantity": 11,
+        "unit": "seals",
+        "maxLeadDays": 7
+      }
+    ],
+    "offers": [
+      {
+        "id": "offer-3dc23e03-5e6f-4aec-ba9e-b5d76c281768",
+        "itemId": "ring",
+        "supplier": "Compact Mechanics",
+        "quoteId": "CM-4",
+        "packSize": 8,
+        "packPrice": "12.37",
+        "minPacks": 1,
+        "stockPacks": 50,
+        "leadDays": 4,
+        "validUntil": "2026-10-21",
+        "currency": "EUR",
+        "deliveryFee": "3.19",
+        "source": {
+          "filename": "functional-offers.csv",
+          "line": 2,
+          "raw": [
+            "ring",
+            "Compact Mechanics",
+            "8",
+            "12.37",
+            "CM-4",
+            "1",
+            "50",
+            "4",
+            "2026-10-21",
+            "EUR",
+            "3.19"
+          ]
+        }
+      },
+      {
+        "id": "offer-33453809-ab48-423c-9447-74f930788e60",
+        "itemId": "ring",
+        "supplier": "Orbit Supply",
+        "quoteId": "OS-7",
+        "packSize": 10,
+        "packPrice": "13.00",
+        "minPacks": 1,
+        "stockPacks": 50,
+        "leadDays": 4,
+        "validUntil": "2026-10-21",
+        "currency": "EUR",
+        "deliveryFee": "1.00",
+        "source": {
+          "filename": "functional-offers.csv",
+          "line": 3,
+          "raw": [
+            "ring",
+            "Orbit Supply",
+            "10",
+            "13.00",
+            "OS-7",
+            "1",
+            "50",
+            "4",
+            "2026-10-21",
+            "EUR",
+            "1.00"
+          ]
+        }
+      },
+      {
+        "id": "offer-8008efc9-83dc-4ab4-8b3f-204344380f8a",
+        "itemId": "ring",
+        "supplier": "Bulk Shop",
+        "quoteId": "BS-9",
+        "packSize": 100,
+        "packPrice": "120.00",
+        "minPacks": 1,
+        "stockPacks": 3,
+        "leadDays": 4,
+        "validUntil": "2026-10-21",
+        "currency": "EUR",
+        "deliveryFee": "2.00",
+        "source": {
+          "filename": "functional-offers.csv",
+          "line": 4,
+          "raw": [
+            "ring",
+            "Bulk Shop",
+            "100",
+            "120.00",
+            "BS-9",
+            "1",
+            "3",
+            "4",
+            "2026-10-21",
+            "EUR",
+            "2.00"
+          ]
+        }
+      },
+      {
+        "id": "offer-b1dab255-e5ea-4925-96cc-e2ff46fd47ab",
+        "itemId": "ring",
+        "supplier": "Expired Sample",
+        "quoteId": "EX-1",
+        "packSize": 1,
+        "packPrice": "0.01",
+        "minPacks": 1,
+        "stockPacks": 10000,
+        "leadDays": 1,
+        "validUntil": "2026-10-20",
+        "currency": "EUR",
+        "deliveryFee": "0.00",
+        "source": {
+          "filename": "functional-offers.csv",
+          "line": 5,
+          "raw": [
+            "ring",
+            "Expired Sample",
+            "1",
+            "0.01",
+            "EX-1",
+            "1",
+            "10000",
+            "1",
+            "2026-10-20",
+            "EUR",
+            "0.00"
+          ]
+        }
+      },
+      {
+        "id": "offer-eeca1423-cfb9-4cc3-a1cd-90a82cb643f9",
+        "itemId": "seal",
+        "supplier": "Documented Seals",
+        "quoteId": "DS-5",
+        "packSize": 6,
+        "packPrice": "3.10",
+        "minPacks": 2,
+        "stockPacks": 30,
+        "leadDays": 5,
+        "validUntil": "2026-10-21",
+        "currency": "EUR",
+        "deliveryFee": "1.75",
+        "source": {
+          "filename": "functional-offers.csv",
+          "line": 6,
+          "raw": [
+            "seal",
+            "Documented Seals",
+            "6",
+            "3.10",
+            "DS-5",
+            "2",
+            "30",
+            "5",
+            "2026-10-21",
+            "EUR",
+            "1.75"
+          ]
+        }
+      },
+      {
+        "id": "offer-33ff7f5d-4335-4cd4-999d-49ab28501593",
+        "itemId": "seal",
+        "supplier": "Unknown Terms",
+        "quoteId": "UT-2",
+        "packSize": 1,
+        "packPrice": "0.65",
+        "minPacks": 1,
+        "stockPacks": null,
+        "leadDays": null,
+        "validUntil": "",
+        "currency": "EUR",
+        "deliveryFee": "0.00",
+        "source": {
+          "filename": "functional-offers.csv",
+          "line": 7,
+          "raw": [
+            "seal",
+            "Unknown Terms",
+            "1",
+            "0.65",
+            "UT-2",
+            "1",
+            "",
+            "",
+            "",
+            "EUR",
+            "0.00"
+          ]
+        }
+      }
+    ],
+    "selections": {
+      "ring": "offer-33453809-ab48-423c-9447-74f930788e60",
+      "seal": "offer-eeca1423-cfb9-4cc3-a1cd-90a82cb643f9"
+    },
+    "notes": {
+      "seal": "Synthetic interface check: documented stock and lead time satisfy the request."
+    },
+    "history": [],
+    "importErrors": []
+  }
+}

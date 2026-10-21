@@ -1,0 +1,2461 @@
+{
+  "format": "QuoteLensSyntheticEngineeringEvaluation",
+  "version": 1,
+  "generatedAt": "2026-10-21T09:04:47.967Z",
+  "command": "node scripts/evaluate-corpus.cjs --write",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "provenance": {
+    "baseCommitAtRun": "b3742d2a07936bbd47c788deb0f0a1798c07d319",
+    "sha256": {
+      "dist/core.js": "5f2d8c41434d5ff7c4b9fc34882bef884a48789d07b81ab0e916ac4a8a71776c",
+      "dist/app.js": "da302fe21df1a94a1eee7e0d2b58cc248b6b05ecf99ca32611a74030c671f222",
+      "evaluations/corpus.cjs": "c374987ec305499d05345ce5d9e615083a1fbff1262807aecc26b90a04b9d757",
+      "evaluations/reference.cjs": "3be3dd3b500c787347db3f9517917560597b993bcc588ab350658abe21c2b28a",
+      "scripts/evaluate-corpus.cjs": "fc7489c390beec4f883abb920488f3db4e2a31486f2e320cee76f539777e129f"
+    }
+  },
+  "method": {
+    "arithmetic": "Separate pack-count enumeration and repeated rational addition; imports no production module.",
+    "contract": "Eligibility and warning expectations are hand-annotated from documented rules, not independently discovered user facts.",
+    "crossCheck": "Fixed handwritten packs/units/totals/subtotals/choices check the reference as well as production.",
+    "revision": "Invokes the actual current app approval-lookup predicate with synthetic states, including same-revision changed content; a revision-only mutant must be rejected. No browser/storage/DOM is exercised.",
+    "authorship": "AI-assisted engineering evaluation; separate implementation does not mean independent human validation."
+  },
+  "summary": {
+    "cases": 15,
+    "offers": 33,
+    "passed": 15,
+    "failed": 0
+  },
+  "limits": [
+    "Fixed synthetic corpus, not random coverage, exhaustive input validation or a procurement acceptance benchmark.",
+    "Reference intentionally supports only these small pack counts and bounded two-decimal terms; production boundary rejection is annotated, not reimplemented.",
+    "Does not exercise browser rendering, CSV parsing, IndexedDB, concurrent tabs, real suppliers, taxes, FX, shared freight, accessibility or user acceptance.",
+    "No time saving, customer saving, demand, adoption, production readiness or unaided personal coding ability is established.",
+    "Revision lookup is application logic evidence, not a fresh browser acceptance run. Existing browser evidence remains separate."
+  ],
+  "results": [
+    {
+      "id": "whole-packs-countercase",
+      "intent": "The lowest nominal unit price loses after whole-pack rounding and line fees.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-whole-packs-countercase",
+        "title": "Synthetic evaluation: whole-packs-countercase",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "screw",
+            "label": "Enclosure screws",
+            "quantity": 51
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "1.00",
+            "quoteId": "quote-bulk",
+            "currency": "EUR",
+            "id": "bulk",
+            "itemId": "screw",
+            "supplier": "Harbor Fasteners",
+            "packSize": 100,
+            "packPrice": "9.00",
+            "source": {
+              "filename": "whole-packs-countercase.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "bulk"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.20",
+            "quoteId": "quote-small",
+            "currency": "EUR",
+            "id": "small",
+            "itemId": "screw",
+            "supplier": "Finch Workshop",
+            "packSize": 10,
+            "packPrice": "1.30",
+            "source": {
+              "filename": "whole-packs-countercase.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "small"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "screw": "small"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "bulk",
+            "itemId": "screw",
+            "packs": 1,
+            "units": 100,
+            "total": "10.00",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "small",
+            "itemId": "screw",
+            "packs": 6,
+            "units": 60,
+            "total": "8.00",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "8.00",
+        "complete": true,
+        "cheapest": {
+          "screw": "small"
+        },
+        "selected": {
+          "screw": "small"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "bulk",
+            "itemId": "screw",
+            "packs": 1,
+            "units": 100,
+            "total": "10.00",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "small",
+            "itemId": "screw",
+            "packs": 6,
+            "units": 60,
+            "total": "8.00",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "8.00",
+        "complete": true,
+        "cheapest": {
+          "screw": "small"
+        },
+        "selected": {
+          "screw": "small"
+        }
+      },
+      "failures": [],
+      "passed": true,
+      "naiveUnitPrice": {
+        "itemId": "screw",
+        "chosen": "bulk",
+        "wholePurchase": "10.00",
+        "correctChoice": "small",
+        "correctWholePurchase": "8.00"
+      }
+    },
+    {
+      "id": "minimum-order",
+      "intent": "Minimum packs can exceed the quantity-based pack count.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-minimum-order",
+        "title": "Synthetic evaluation: minimum-order",
+        "date": "2026-10-21",
+        "currency": "GBP",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "roll",
+            "label": "Cable identification rolls",
+            "quantity": 7
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 5,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.40",
+            "quoteId": "quote-moq",
+            "currency": "GBP",
+            "id": "moq",
+            "itemId": "roll",
+            "supplier": "Maple Labels",
+            "packSize": 4,
+            "packPrice": "2.35",
+            "source": {
+              "filename": "minimum-order.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "moq"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.25",
+            "quoteId": "quote-flex",
+            "currency": "GBP",
+            "id": "flex",
+            "itemId": "roll",
+            "supplier": "Larch Labels",
+            "packSize": 2,
+            "packPrice": "1.25",
+            "source": {
+              "filename": "minimum-order.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "flex"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "roll": "flex"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "moq",
+            "itemId": "roll",
+            "packs": 5,
+            "units": 20,
+            "total": "12.15",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "flex",
+            "itemId": "roll",
+            "packs": 4,
+            "units": 8,
+            "total": "5.25",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "5.25",
+        "complete": true,
+        "cheapest": {
+          "roll": "flex"
+        },
+        "selected": {
+          "roll": "flex"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "moq",
+            "itemId": "roll",
+            "packs": 5,
+            "units": 20,
+            "total": "12.15",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "flex",
+            "itemId": "roll",
+            "packs": 4,
+            "units": 8,
+            "total": "5.25",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "5.25",
+        "complete": true,
+        "cheapest": {
+          "roll": "flex"
+        },
+        "selected": {
+          "roll": "flex"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "delivery-reverses-ranking",
+      "intent": "A lower goods price need not have the lowest line-inclusive total.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-delivery-reverses-ranking",
+        "title": "Synthetic evaluation: delivery-reverses-ranking",
+        "date": "2026-10-21",
+        "currency": "USD",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "bracket",
+            "label": "Sensor brackets",
+            "quantity": 24
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "9.00",
+            "quoteId": "quote-low-goods",
+            "currency": "USD",
+            "id": "low-goods",
+            "itemId": "bracket",
+            "supplier": "Cove Metal",
+            "packSize": 6,
+            "packPrice": "3.00",
+            "source": {
+              "filename": "delivery-reverses-ranking.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "low-goods"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-no-fee",
+            "currency": "USD",
+            "id": "no-fee",
+            "itemId": "bracket",
+            "supplier": "Marsh Metal",
+            "packSize": 8,
+            "packPrice": "4.40",
+            "source": {
+              "filename": "delivery-reverses-ranking.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "no-fee"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "bracket": "no-fee"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "low-goods",
+            "itemId": "bracket",
+            "packs": 4,
+            "units": 24,
+            "total": "21.00",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "no-fee",
+            "itemId": "bracket",
+            "packs": 3,
+            "units": 24,
+            "total": "13.20",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "13.20",
+        "complete": true,
+        "cheapest": {
+          "bracket": "no-fee"
+        },
+        "selected": {
+          "bracket": "no-fee"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "low-goods",
+            "itemId": "bracket",
+            "packs": 4,
+            "units": 24,
+            "total": "21.00",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "no-fee",
+            "itemId": "bracket",
+            "packs": 3,
+            "units": 24,
+            "total": "13.20",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "13.20",
+        "complete": true,
+        "cheapest": {
+          "bracket": "no-fee"
+        },
+        "selected": {
+          "bracket": "no-fee"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "unknown-is-not-zero",
+      "intent": "Unprovided commercial facts warn without inventing facts; unconstrained lead time may remain unknown.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-unknown-is-not-zero",
+        "title": "Synthetic evaluation: unknown-is-not-zero",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "tray",
+            "label": "Component trays",
+            "quantity": 13
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": null,
+            "leadDays": null,
+            "validUntil": "",
+            "deliveryFee": "1.05",
+            "quoteId": "quote-unverified",
+            "currency": "EUR",
+            "id": "unverified",
+            "itemId": "tray",
+            "supplier": "Fern Storage",
+            "packSize": 5,
+            "packPrice": "0.85",
+            "source": {
+              "filename": "unknown-is-not-zero.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "unverified"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "tray": "unverified"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "unverified",
+            "itemId": "tray",
+            "packs": 3,
+            "units": 15,
+            "total": "3.60",
+            "eligible": true,
+            "blocked": [],
+            "warnings": [
+              "lead-unknown",
+              "stock-unknown",
+              "validity-unknown"
+            ]
+          }
+        ],
+        "subtotal": "3.60",
+        "complete": true,
+        "cheapest": {
+          "tray": "unverified"
+        },
+        "selected": {
+          "tray": "unverified"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "unverified",
+            "itemId": "tray",
+            "packs": 3,
+            "units": 15,
+            "total": "3.60",
+            "eligible": true,
+            "blocked": [],
+            "warnings": [
+              "lead-unknown",
+              "stock-unknown",
+              "validity-unknown"
+            ]
+          }
+        ],
+        "subtotal": "3.60",
+        "complete": true,
+        "cheapest": {
+          "tray": "unverified"
+        },
+        "selected": {
+          "tray": "unverified"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "unknown-deadline",
+      "intent": "Unknown lead time cannot establish compliance with a maximum lead time.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-unknown-deadline",
+        "title": "Synthetic evaluation: unknown-deadline",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": 3,
+            "id": "tray",
+            "label": "Deadline-bound trays",
+            "quantity": 13
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": null,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "1.05",
+            "quoteId": "quote-unknown-lead",
+            "currency": "EUR",
+            "id": "unknown-lead",
+            "itemId": "tray",
+            "supplier": "Fir Storage",
+            "packSize": 5,
+            "packPrice": "0.85",
+            "source": {
+              "filename": "unknown-deadline.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "unknown-lead"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "tray": "unknown-lead"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "unknown-lead",
+            "itemId": "tray",
+            "packs": 3,
+            "units": 15,
+            "total": "3.60",
+            "eligible": false,
+            "blocked": [
+              "lead-required"
+            ],
+            "warnings": [
+              "lead-unknown"
+            ]
+          }
+        ],
+        "subtotal": "0.00",
+        "complete": false,
+        "cheapest": {
+          "tray": null
+        },
+        "selected": {
+          "tray": "unknown-lead"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "unknown-lead",
+            "itemId": "tray",
+            "packs": 3,
+            "units": 15,
+            "total": "3.60",
+            "eligible": false,
+            "blocked": [
+              "lead-required"
+            ],
+            "warnings": [
+              "lead-unknown"
+            ]
+          }
+        ],
+        "subtotal": "0.00",
+        "complete": false,
+        "cheapest": {
+          "tray": null
+        },
+        "selected": {
+          "tray": "unknown-lead"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "inclusive-calendar-and-lead",
+      "intent": "A valid leap-day expiry is inclusive; one day expired and one day too slow both block.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-inclusive-calendar-and-lead",
+        "title": "Synthetic evaluation: inclusive-calendar-and-lead",
+        "date": "2028-02-29",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": 0,
+            "id": "cap",
+            "label": "Instrument caps",
+            "quantity": 12
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 2,
+            "leadDays": 0,
+            "validUntil": "2028-02-29",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-boundary",
+            "currency": "EUR",
+            "id": "boundary",
+            "itemId": "cap",
+            "supplier": "Alder Instruments",
+            "packSize": 6,
+            "packPrice": "7.05",
+            "source": {
+              "filename": "inclusive-calendar-and-lead.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "boundary"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 0,
+            "validUntil": "2028-02-28",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-expired",
+            "currency": "EUR",
+            "id": "expired",
+            "itemId": "cap",
+            "supplier": "Ash Instruments",
+            "packSize": 6,
+            "packPrice": "7.05",
+            "source": {
+              "filename": "inclusive-calendar-and-lead.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "expired"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 1,
+            "validUntil": "2028-03-01",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-too-slow",
+            "currency": "EUR",
+            "id": "too-slow",
+            "itemId": "cap",
+            "supplier": "Elm Instruments",
+            "packSize": 6,
+            "packPrice": "7.05",
+            "source": {
+              "filename": "inclusive-calendar-and-lead.synthetic.csv",
+              "line": 4,
+              "raw": {
+                "synthetic": true,
+                "input": "too-slow"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "cap": "boundary"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "boundary",
+            "itemId": "cap",
+            "packs": 2,
+            "units": 12,
+            "total": "14.10",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "expired",
+            "itemId": "cap",
+            "packs": 2,
+            "units": 12,
+            "total": "14.10",
+            "eligible": false,
+            "blocked": [
+              "expired"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "too-slow",
+            "itemId": "cap",
+            "packs": 2,
+            "units": 12,
+            "total": "14.10",
+            "eligible": false,
+            "blocked": [
+              "lead-exceeded"
+            ],
+            "warnings": []
+          }
+        ],
+        "subtotal": "14.10",
+        "complete": true,
+        "cheapest": {
+          "cap": "boundary"
+        },
+        "selected": {
+          "cap": "boundary"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "boundary",
+            "itemId": "cap",
+            "packs": 2,
+            "units": 12,
+            "total": "14.10",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "expired",
+            "itemId": "cap",
+            "packs": 2,
+            "units": 12,
+            "total": "14.10",
+            "eligible": false,
+            "blocked": [
+              "expired"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "too-slow",
+            "itemId": "cap",
+            "packs": 2,
+            "units": 12,
+            "total": "14.10",
+            "eligible": false,
+            "blocked": [
+              "lead-exceeded"
+            ],
+            "warnings": []
+          }
+        ],
+        "subtotal": "14.10",
+        "complete": true,
+        "cheapest": {
+          "cap": "boundary"
+        },
+        "selected": {
+          "cap": "boundary"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "stock-counts-packs",
+      "intent": "Stock counts available packs: three is insufficient when four are needed, zero is explicit unavailability.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-stock-counts-packs",
+        "title": "Synthetic evaluation: stock-counts-packs",
+        "date": "2026-10-21",
+        "currency": "VND",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "tube",
+            "label": "Protective tubing",
+            "quantity": 31
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 3,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "900.00",
+            "quoteId": "quote-short",
+            "currency": "VND",
+            "id": "short",
+            "itemId": "tube",
+            "supplier": "Pine Tubing",
+            "packSize": 10,
+            "packPrice": "2100.00",
+            "source": {
+              "filename": "stock-counts-packs.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "short"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 0,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "900.00",
+            "quoteId": "quote-none",
+            "currency": "VND",
+            "id": "none",
+            "itemId": "tube",
+            "supplier": "Spruce Tubing",
+            "packSize": 10,
+            "packPrice": "2100.00",
+            "source": {
+              "filename": "stock-counts-packs.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "none"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 4,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "900.00",
+            "quoteId": "quote-enough",
+            "currency": "VND",
+            "id": "enough",
+            "itemId": "tube",
+            "supplier": "Birch Tubing",
+            "packSize": 10,
+            "packPrice": "2100.00",
+            "source": {
+              "filename": "stock-counts-packs.synthetic.csv",
+              "line": 4,
+              "raw": {
+                "synthetic": true,
+                "input": "enough"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "tube": "enough"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "short",
+            "itemId": "tube",
+            "packs": 4,
+            "units": 40,
+            "total": "9300.00",
+            "eligible": false,
+            "blocked": [
+              "stock-insufficient"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "none",
+            "itemId": "tube",
+            "packs": 4,
+            "units": 40,
+            "total": "9300.00",
+            "eligible": false,
+            "blocked": [
+              "stock-insufficient"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "enough",
+            "itemId": "tube",
+            "packs": 4,
+            "units": 40,
+            "total": "9300.00",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "9300.00",
+        "complete": true,
+        "cheapest": {
+          "tube": "enough"
+        },
+        "selected": {
+          "tube": "enough"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "short",
+            "itemId": "tube",
+            "packs": 4,
+            "units": 40,
+            "total": "9300.00",
+            "eligible": false,
+            "blocked": [
+              "stock-insufficient"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "none",
+            "itemId": "tube",
+            "packs": 4,
+            "units": 40,
+            "total": "9300.00",
+            "eligible": false,
+            "blocked": [
+              "stock-insufficient"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "enough",
+            "itemId": "tube",
+            "packs": 4,
+            "units": 40,
+            "total": "9300.00",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "9300.00",
+        "complete": true,
+        "cheapest": {
+          "tube": "enough"
+        },
+        "selected": {
+          "tube": "enough"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "invalid-terms",
+      "intent": "Malformed money, pack counts, dates and fees stay blocked instead of being coerced.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-invalid-terms",
+        "title": "Synthetic evaluation: invalid-terms",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "clip",
+            "label": "Retaining clips",
+            "quantity": 8
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-precision",
+            "currency": "EUR",
+            "id": "precision",
+            "itemId": "clip",
+            "supplier": "Yew Clips",
+            "packSize": 4,
+            "packPrice": "4.001",
+            "source": {
+              "filename": "invalid-terms.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "precision"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-zero-pack",
+            "currency": "EUR",
+            "id": "zero-pack",
+            "itemId": "clip",
+            "supplier": "Rowan Clips",
+            "packSize": 0,
+            "packPrice": "4.00",
+            "source": {
+              "filename": "invalid-terms.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "zero-pack"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-02-30",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-bad-date",
+            "currency": "EUR",
+            "id": "bad-date",
+            "itemId": "clip",
+            "supplier": "Willow Clips",
+            "packSize": 4,
+            "packPrice": "4.00",
+            "source": {
+              "filename": "invalid-terms.synthetic.csv",
+              "line": 4,
+              "raw": {
+                "synthetic": true,
+                "input": "bad-date"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "-0.01",
+            "quoteId": "quote-negative-fee",
+            "currency": "EUR",
+            "id": "negative-fee",
+            "itemId": "clip",
+            "supplier": "Cedar Clips",
+            "packSize": 4,
+            "packPrice": "4.00",
+            "source": {
+              "filename": "invalid-terms.synthetic.csv",
+              "line": 5,
+              "raw": {
+                "synthetic": true,
+                "input": "negative-fee"
+              }
+            }
+          }
+        ],
+        "selections": {},
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "precision",
+            "itemId": "clip",
+            "packs": 2,
+            "units": 8,
+            "total": null,
+            "eligible": false,
+            "blocked": [
+              "invalid-price"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "zero-pack",
+            "itemId": "clip",
+            "packs": null,
+            "units": null,
+            "total": null,
+            "eligible": false,
+            "blocked": [
+              "invalid-pack"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "bad-date",
+            "itemId": "clip",
+            "packs": 2,
+            "units": 8,
+            "total": "8.00",
+            "eligible": false,
+            "blocked": [
+              "invalid-validity"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "negative-fee",
+            "itemId": "clip",
+            "packs": 2,
+            "units": 8,
+            "total": null,
+            "eligible": false,
+            "blocked": [
+              "invalid-delivery"
+            ],
+            "warnings": []
+          }
+        ],
+        "subtotal": "0.00",
+        "complete": false,
+        "cheapest": {
+          "clip": null
+        },
+        "selected": {
+          "clip": null
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "precision",
+            "itemId": "clip",
+            "packs": 2,
+            "units": 8,
+            "total": null,
+            "eligible": false,
+            "blocked": [
+              "invalid-price"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "zero-pack",
+            "itemId": "clip",
+            "packs": null,
+            "units": null,
+            "total": null,
+            "eligible": false,
+            "blocked": [
+              "invalid-pack"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "bad-date",
+            "itemId": "clip",
+            "packs": 2,
+            "units": 8,
+            "total": "8.00",
+            "eligible": false,
+            "blocked": [
+              "invalid-validity"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "negative-fee",
+            "itemId": "clip",
+            "packs": 2,
+            "units": 8,
+            "total": null,
+            "eligible": false,
+            "blocked": [
+              "invalid-delivery"
+            ],
+            "warnings": []
+          }
+        ],
+        "subtotal": "0.00",
+        "complete": false,
+        "cheapest": {
+          "clip": null
+        },
+        "selected": {
+          "clip": null
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "exact-duplicates",
+      "intent": "Exact duplicate supplier/quote/item identities block both rows, even with different row IDs.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-exact-duplicates",
+        "title": "Synthetic evaluation: exact-duplicates",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "pin",
+            "label": "Alignment pins",
+            "quantity": 9
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "HP-42",
+            "currency": "EUR",
+            "id": "copy-a",
+            "itemId": "pin",
+            "supplier": "Hazel Precision",
+            "packSize": 3,
+            "packPrice": "2.00",
+            "source": {
+              "filename": "exact-duplicates.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "copy-a"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "HP-42",
+            "currency": "EUR",
+            "id": "copy-b",
+            "itemId": "pin",
+            "supplier": "Hazel Precision",
+            "packSize": 3,
+            "packPrice": "2.00",
+            "source": {
+              "filename": "exact-duplicates.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "copy-b"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-distinct",
+            "currency": "EUR",
+            "id": "distinct",
+            "itemId": "pin",
+            "supplier": "Aspen Precision",
+            "packSize": 3,
+            "packPrice": "2.10",
+            "source": {
+              "filename": "exact-duplicates.synthetic.csv",
+              "line": 4,
+              "raw": {
+                "synthetic": true,
+                "input": "distinct"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "pin": "distinct"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "copy-a",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.00",
+            "eligible": false,
+            "blocked": [
+              "duplicate-exact"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "copy-b",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.00",
+            "eligible": false,
+            "blocked": [
+              "duplicate-exact"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "distinct",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.30",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "6.30",
+        "complete": true,
+        "cheapest": {
+          "pin": "distinct"
+        },
+        "selected": {
+          "pin": "distinct"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "copy-a",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.00",
+            "eligible": false,
+            "blocked": [
+              "duplicate-exact"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "copy-b",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.00",
+            "eligible": false,
+            "blocked": [
+              "duplicate-exact"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "distinct",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.30",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "6.30",
+        "complete": true,
+        "cheapest": {
+          "pin": "distinct"
+        },
+        "selected": {
+          "pin": "distinct"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "conflicting-duplicates",
+      "intent": "A conflicting duplicate cannot be resolved by silently taking its cheaper version.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-conflicting-duplicates",
+        "title": "Synthetic evaluation: conflicting-duplicates",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "pin",
+            "label": "Guide pins",
+            "quantity": 9
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "HP-51",
+            "currency": "EUR",
+            "id": "conflict-a",
+            "itemId": "pin",
+            "supplier": "Holly Precision",
+            "packSize": 3,
+            "packPrice": "2.00",
+            "source": {
+              "filename": "conflicting-duplicates.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "conflict-a"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "HP-51",
+            "currency": "EUR",
+            "id": "conflict-b",
+            "itemId": "pin",
+            "supplier": "Holly Precision",
+            "packSize": 3,
+            "packPrice": "2.01",
+            "source": {
+              "filename": "conflicting-duplicates.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "conflict-b"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-resolved",
+            "currency": "EUR",
+            "id": "resolved",
+            "itemId": "pin",
+            "supplier": "Hawthorn Precision",
+            "packSize": 3,
+            "packPrice": "2.10",
+            "source": {
+              "filename": "conflicting-duplicates.synthetic.csv",
+              "line": 4,
+              "raw": {
+                "synthetic": true,
+                "input": "resolved"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "pin": "resolved"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "conflict-a",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.00",
+            "eligible": false,
+            "blocked": [
+              "duplicate-conflicting"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "conflict-b",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.03",
+            "eligible": false,
+            "blocked": [
+              "duplicate-conflicting"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "resolved",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.30",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "6.30",
+        "complete": true,
+        "cheapest": {
+          "pin": "resolved"
+        },
+        "selected": {
+          "pin": "resolved"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "conflict-a",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.00",
+            "eligible": false,
+            "blocked": [
+              "duplicate-conflicting"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "conflict-b",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.03",
+            "eligible": false,
+            "blocked": [
+              "duplicate-conflicting"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "resolved",
+            "itemId": "pin",
+            "packs": 3,
+            "units": 9,
+            "total": "6.30",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "6.30",
+        "complete": true,
+        "cheapest": {
+          "pin": "resolved"
+        },
+        "selected": {
+          "pin": "resolved"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "partial-selection",
+      "intent": "An unselected item leaves a subtotal rather than a completed approval.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-partial-selection",
+        "title": "Synthetic evaluation: partial-selection",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "pump",
+            "label": "Dosing pump clips",
+            "quantity": 17
+          },
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "filter",
+            "label": "Filter supports",
+            "quantity": 8
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.09",
+            "quoteId": "quote-pumps",
+            "currency": "EUR",
+            "id": "pumps",
+            "itemId": "pump",
+            "supplier": "Juniper Components",
+            "packSize": 6,
+            "packPrice": "3.11",
+            "source": {
+              "filename": "partial-selection.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "pumps"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.20",
+            "quoteId": "quote-filters",
+            "currency": "EUR",
+            "id": "filters",
+            "itemId": "filter",
+            "supplier": "Laurel Components",
+            "packSize": 5,
+            "packPrice": "1.35",
+            "source": {
+              "filename": "partial-selection.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "filters"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "pump": "pumps"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "pumps",
+            "itemId": "pump",
+            "packs": 3,
+            "units": 18,
+            "total": "9.42",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "filters",
+            "itemId": "filter",
+            "packs": 2,
+            "units": 10,
+            "total": "2.90",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "9.42",
+        "complete": false,
+        "cheapest": {
+          "pump": "pumps",
+          "filter": "filters"
+        },
+        "selected": {
+          "pump": "pumps",
+          "filter": null
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "pumps",
+            "itemId": "pump",
+            "packs": 3,
+            "units": 18,
+            "total": "9.42",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "filters",
+            "itemId": "filter",
+            "packs": 2,
+            "units": 10,
+            "total": "2.90",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "9.42",
+        "complete": false,
+        "cheapest": {
+          "pump": "pumps",
+          "filter": "filters"
+        },
+        "selected": {
+          "pump": "pumps",
+          "filter": null
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "blocked-selection-excluded",
+      "intent": "A selected blocked line is explained but never added to the eligible subtotal.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-blocked-selection-excluded",
+        "title": "Synthetic evaluation: blocked-selection-excluded",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "pump",
+            "label": "Pump mounts",
+            "quantity": 17
+          },
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "filter",
+            "label": "Filter mounts",
+            "quantity": 8
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.09",
+            "quoteId": "quote-mounts",
+            "currency": "EUR",
+            "id": "mounts",
+            "itemId": "pump",
+            "supplier": "Acacia Components",
+            "packSize": 6,
+            "packPrice": "3.11",
+            "source": {
+              "filename": "blocked-selection-excluded.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "mounts"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 0,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.20",
+            "quoteId": "quote-no-stock",
+            "currency": "EUR",
+            "id": "no-stock",
+            "itemId": "filter",
+            "supplier": "Magnolia Components",
+            "packSize": 5,
+            "packPrice": "1.35",
+            "source": {
+              "filename": "blocked-selection-excluded.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "no-stock"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "pump": "mounts",
+          "filter": "no-stock"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "mounts",
+            "itemId": "pump",
+            "packs": 3,
+            "units": 18,
+            "total": "9.42",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "no-stock",
+            "itemId": "filter",
+            "packs": 2,
+            "units": 10,
+            "total": "2.90",
+            "eligible": false,
+            "blocked": [
+              "stock-insufficient"
+            ],
+            "warnings": []
+          }
+        ],
+        "subtotal": "9.42",
+        "complete": false,
+        "cheapest": {
+          "pump": "mounts",
+          "filter": null
+        },
+        "selected": {
+          "pump": "mounts",
+          "filter": "no-stock"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "mounts",
+            "itemId": "pump",
+            "packs": 3,
+            "units": 18,
+            "total": "9.42",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "no-stock",
+            "itemId": "filter",
+            "packs": 2,
+            "units": 10,
+            "total": "2.90",
+            "eligible": false,
+            "blocked": [
+              "stock-insufficient"
+            ],
+            "warnings": []
+          }
+        ],
+        "subtotal": "9.42",
+        "complete": false,
+        "cheapest": {
+          "pump": "mounts",
+          "filter": null
+        },
+        "selected": {
+          "pump": "mounts",
+          "filter": "no-stock"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "no-implicit-fx",
+      "intent": "A numerically low foreign-currency offer cannot enter a GBP total.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-no-implicit-fx",
+        "title": "Synthetic evaluation: no-implicit-fx",
+        "date": "2026-10-21",
+        "currency": "GBP",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "seal",
+            "label": "Weather seals",
+            "quantity": 7
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-foreign",
+            "currency": "USD",
+            "id": "foreign",
+            "itemId": "seal",
+            "supplier": "Beech Seals",
+            "packSize": 4,
+            "packPrice": "2.70",
+            "source": {
+              "filename": "no-implicit-fx.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "foreign"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-domestic",
+            "currency": "GBP",
+            "id": "domestic",
+            "itemId": "seal",
+            "supplier": "Chestnut Seals",
+            "packSize": 4,
+            "packPrice": "3.10",
+            "source": {
+              "filename": "no-implicit-fx.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "domestic"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "seal": "domestic"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "foreign",
+            "itemId": "seal",
+            "packs": 2,
+            "units": 8,
+            "total": "5.40",
+            "eligible": false,
+            "blocked": [
+              "currency"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "domestic",
+            "itemId": "seal",
+            "packs": 2,
+            "units": 8,
+            "total": "6.20",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "6.20",
+        "complete": true,
+        "cheapest": {
+          "seal": "domestic"
+        },
+        "selected": {
+          "seal": "domestic"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "foreign",
+            "itemId": "seal",
+            "packs": 2,
+            "units": 8,
+            "total": "5.40",
+            "eligible": false,
+            "blocked": [
+              "currency"
+            ],
+            "warnings": []
+          },
+          {
+            "id": "domestic",
+            "itemId": "seal",
+            "packs": 2,
+            "units": 8,
+            "total": "6.20",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "6.20",
+        "complete": true,
+        "cheapest": {
+          "seal": "domestic"
+        },
+        "selected": {
+          "seal": "domestic"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "large-exact-decimals",
+      "intent": "Rational reference and production minor-unit arithmetic agree beyond safe numeric cents.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-large-exact-decimals",
+        "title": "Synthetic evaluation: large-exact-decimals",
+        "date": "2026-10-21",
+        "currency": "USD",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "calibration",
+            "label": "Synthetic high-value calibration units",
+            "quantity": 7
+          },
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "washer",
+            "label": "Calibration washers",
+            "quantity": 3
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.07",
+            "quoteId": "quote-large",
+            "currency": "USD",
+            "id": "large",
+            "itemId": "calibration",
+            "supplier": "Redwood Metrology",
+            "packSize": 2,
+            "packPrice": "888888888888888.88",
+            "source": {
+              "filename": "large-exact-decimals.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "large"
+              }
+            }
+          },
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "0.00",
+            "quoteId": "quote-tiny",
+            "currency": "USD",
+            "id": "tiny",
+            "itemId": "washer",
+            "supplier": "Oak Metrology",
+            "packSize": 1,
+            "packPrice": "0.10",
+            "source": {
+              "filename": "large-exact-decimals.synthetic.csv",
+              "line": 3,
+              "raw": {
+                "synthetic": true,
+                "input": "tiny"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "calibration": "large",
+          "washer": "tiny"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "large",
+            "itemId": "calibration",
+            "packs": 4,
+            "units": 8,
+            "total": "3555555555555555.59",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "tiny",
+            "itemId": "washer",
+            "packs": 3,
+            "units": 3,
+            "total": "0.30",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "3555555555555555.89",
+        "complete": true,
+        "cheapest": {
+          "calibration": "large",
+          "washer": "tiny"
+        },
+        "selected": {
+          "calibration": "large",
+          "washer": "tiny"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "large",
+            "itemId": "calibration",
+            "packs": 4,
+            "units": 8,
+            "total": "3555555555555555.59",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          },
+          {
+            "id": "tiny",
+            "itemId": "washer",
+            "packs": 3,
+            "units": 3,
+            "total": "0.30",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "3555555555555555.89",
+        "complete": true,
+        "cheapest": {
+          "calibration": "large",
+          "washer": "tiny"
+        },
+        "selected": {
+          "calibration": "large",
+          "washer": "tiny"
+        }
+      },
+      "failures": [],
+      "passed": true
+    },
+    {
+      "id": "same-total-new-review",
+      "intent": "Changed quantity needs a new review even when the whole-pack total does not change; reverting values does not revive the older revision.",
+      "input": {
+        "schemaVersion": 2,
+        "id": "evaluation-same-total-new-review",
+        "title": "Synthetic evaluation: same-total-new-review",
+        "date": "2026-10-21",
+        "currency": "EUR",
+        "revision": 1,
+        "request": [
+          {
+            "unit": "pieces",
+            "maxLeadDays": null,
+            "id": "pad",
+            "label": "Insulating pads",
+            "quantity": 23
+          }
+        ],
+        "offers": [
+          {
+            "minPacks": 1,
+            "stockPacks": 100,
+            "leadDays": 2,
+            "validUntil": "2026-12-31",
+            "deliveryFee": "1.25",
+            "quoteId": "quote-pads",
+            "currency": "EUR",
+            "id": "pads",
+            "itemId": "pad",
+            "supplier": "Poplar Insulation",
+            "packSize": 10,
+            "packPrice": "5.75",
+            "source": {
+              "filename": "same-total-new-review.synthetic.csv",
+              "line": 2,
+              "raw": {
+                "synthetic": true,
+                "input": "pads"
+              }
+            }
+          }
+        ],
+        "selections": {
+          "pad": "pads"
+        },
+        "notes": {},
+        "history": [],
+        "importErrors": []
+      },
+      "expected": {
+        "lines": [
+          {
+            "id": "pads",
+            "itemId": "pad",
+            "packs": 3,
+            "units": 30,
+            "total": "18.50",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "18.50",
+        "complete": true,
+        "cheapest": {
+          "pad": "pads"
+        },
+        "selected": {
+          "pad": "pads"
+        }
+      },
+      "actual": {
+        "lines": [
+          {
+            "id": "pads",
+            "itemId": "pad",
+            "packs": 3,
+            "units": 30,
+            "total": "18.50",
+            "eligible": true,
+            "blocked": [],
+            "warnings": []
+          }
+        ],
+        "subtotal": "18.50",
+        "complete": true,
+        "cheapest": {
+          "pad": "pads"
+        },
+        "selected": {
+          "pad": "pads"
+        }
+      },
+      "failures": [],
+      "passed": true,
+      "revisions": [
+        {
+          "expected": {
+            "revision": 1,
+            "quantity": 23,
+            "subtotal": "18.50",
+            "currentApproval": true
+          },
+          "actual": {
+            "revision": 1,
+            "quantity": 23,
+            "subtotal": "18.50",
+            "currentApproval": true
+          },
+          "contentMatchesOriginal": true,
+          "historicalReceiptTotal": "18.50",
+          "revisionOnlyMutant": {
+            "actualApproval": true,
+            "disagreesWithExpected": false
+          }
+        },
+        {
+          "expected": {
+            "revision": 1,
+            "quantity": 24,
+            "subtotal": "18.50",
+            "currentApproval": false
+          },
+          "actual": {
+            "revision": 1,
+            "quantity": 24,
+            "subtotal": "18.50",
+            "currentApproval": false
+          },
+          "contentMatchesOriginal": false,
+          "historicalReceiptTotal": "18.50",
+          "revisionOnlyMutant": {
+            "actualApproval": true,
+            "disagreesWithExpected": true
+          }
+        },
+        {
+          "expected": {
+            "revision": 2,
+            "quantity": 24,
+            "subtotal": "18.50",
+            "currentApproval": false
+          },
+          "actual": {
+            "revision": 2,
+            "quantity": 24,
+            "subtotal": "18.50",
+            "currentApproval": false
+          },
+          "contentMatchesOriginal": false,
+          "historicalReceiptTotal": "18.50",
+          "revisionOnlyMutant": {
+            "actualApproval": false,
+            "disagreesWithExpected": false
+          }
+        },
+        {
+          "expected": {
+            "revision": 3,
+            "quantity": 23,
+            "subtotal": "18.50",
+            "currentApproval": false
+          },
+          "actual": {
+            "revision": 3,
+            "quantity": 23,
+            "subtotal": "18.50",
+            "currentApproval": false
+          },
+          "contentMatchesOriginal": true,
+          "historicalReceiptTotal": "18.50",
+          "revisionOnlyMutant": {
+            "actualApproval": false,
+            "disagreesWithExpected": false
+          }
+        }
+      ],
+      "revisionMutationControl": {
+        "name": "revision-only-approval-lookup",
+        "expectedRejected": true,
+        "rejected": true,
+        "counterexamples": [
+          {
+            "revision": 1,
+            "quantity": 24,
+            "expectedApproval": false,
+            "mutantApproval": true
+          }
+        ]
+      }
+    }
+  ]
+}
