@@ -1,7 +1,10 @@
-sku,vendor,pack_size,price,quote_id,moq,stock,lead_days,valid_until,ccy,freight
-ring,Compact Mechanics,8,12.37,CM-4,1,50,4,2026-10-21,EUR,3.19
-ring,Orbit Supply,10,13.00,OS-7,1,50,4,2026-10-21,EUR,1.00
-ring,Bulk Shop,100,120.00,BS-9,1,3,4,2026-10-21,EUR,2.00
-ring,Expired Sample,1,0.01,EX-1,1,10000,1,2026-10-20,EUR,0.00
-seal,Documented Seals,6,3.10,DS-5,2,30,5,2026-10-21,EUR,1.75
-seal,Unknown Terms,1,0.65,UT-2,1,,,,EUR,0.00
+part,vendor,quote,pack_units,pack_cost,min_packs,available_packs,days,valid_through,ccy,line_delivery,note
+spacer,Cobalt Supply,CS-41,8,4.85,1,6,4,2026-10-21,GBP,1.90,"Fixture only; quote ""rev A"""
+spacer,Juniper Depot,JD-41,25,14.25,2,10,3,2026-10-21,GBP,4.20,"Lower unit price, higher order total"
+spacer,Expired Edge,EX-41,1,0.01,1,1000,1,2026-10-20,GBP,0.00,Expired before review date
+spacer,Unstated Lead,UL-41,1,0.01,1,1000,,2026-10-21,GBP,0.00,Lead time not supplied
+sleeve,Kestrel Parts,KP-07,6,3.45,3,10,5,2026-10-21,GBP,0.65,Minimum three packs
+sleeve,Linnet Parts,LP-07,1,1.42,1,100,2,2026-10-21,GBP,2.10,Single-unit packs
+sleeve,DupLab,DL-07,1,0.10,1,100,2,2026-10-21,GBP,0.00,Exact duplicate fixture
+sleeve,DupLab,DL-07,1,0.10,1,100,2,2026-10-21,GBP,0.00,Exact duplicate fixture
+sleeve,Unverified Stock,US-07,1,1.70,1,,4,,GBP,0.00,Unknown stock and validity

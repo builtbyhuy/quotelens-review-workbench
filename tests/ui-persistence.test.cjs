@@ -24,6 +24,7 @@ async function harness() {
   rows.set('preview-quantity', { value: '120', setCustomValidity(value) { this.validationMessage = value; }, setAttribute(name, value) { attributes.set(name, value); }, removeAttribute(name) { attributes.delete(name); } });
   rows.set('preview-error', { hidden: true, textContent: '' });
   rows.set('quick-comparison', { innerHTML: '' });
+  rows.set('preview-papers', { innerHTML: '' });
   const preset = { dataset: { quantity: '100' }, innerHTML: '' };
   const document = { getElementById(id) { return id === 'app' ? app : id === 'dialog' ? dialog : id === 'toast' ? toast : rows.get(id); },
     querySelector(selector) { return selector === '.save-state' ? indicator : selector === '[data-action="preview-quantity"]' ? preset : null; }, addEventListener(type, handler) { handlers[type] = handler; } };
@@ -76,6 +77,12 @@ test('first-use quantity changes select the real lowest order cost at the pack b
   for (const [quantity, supplier, total, packs] of [[120, 'Birch Parts', '27.40', 12], [100, 'Oak Supply', '22.00', 1], [101, 'Birch Parts', '25.20', 11]]) {
     const result = h.get(`(()=>{const w=previewWorkspace(${quantity});const a=QL.analyze(w);return {valid:QL.validateWorkspace(w).valid,supplier:a.items[0].selected.offer.supplier,total:a.total,packs:a.items[0].selected.packs};})()`);
     assert.equal(result.valid, true); assert.equal(result.supplier, supplier); assert.equal(result.total, total); assert.equal(result.packs, packs);
+    assert.equal(h.get(`updatePreview(${quantity})`), true);
+    const papers = h.rows.get('preview-papers').innerHTML;
+    assert.match(papers, new RegExp('paper-number">' + quantity + '<small> bolts'));
+    assert.match(papers, new RegExp('\\$' + total.replace('.', '\\.')));
+    assert.match(papers, /FICTIONAL QUOTE/);
+    assert.equal((papers.match(/Lowest eligible total/g) || []).length, 1, 'the visual quote summary must agree with the comparison winner');
   }
 });
 

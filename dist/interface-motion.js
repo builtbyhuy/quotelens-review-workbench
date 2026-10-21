@@ -1,40 +1,59 @@
-// Visual feedback is independent of calculation, persistence and focus handling.
+// Presentation only. Calculation, local persistence and focus remain app.js responsibilities.
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-let keyboard = false, pendingView = null, emphasizeDecision = false;
+const app = document.getElementById('app');
+const dialog = document.getElementById('dialog');
+let manualOff = false, keyboard = false, pendingView = null, emphasizeDecision = false;
+const running = new Set();
+const enabled = () => !manualOff && !reduced.matches;
+const stop = () => { running.forEach(animation => animation.cancel()); running.clear(); };
+function syncControls() {
+  const mode = enabled() ? 'on' : 'off';
+  if (document.documentElement.dataset.motion !== mode) document.documentElement.dataset.motion = mode;
+  document.querySelectorAll('[data-motion-toggle]').forEach(button => {
+    const label = reduced.matches ? 'Reduced motion' : manualOff ? 'Motion off' : 'Motion on';
+    if (button.textContent !== label) button.textContent = label;
+    button.setAttribute('aria-pressed', String(enabled()));
+    button.disabled = reduced.matches;
+  });
+}
+function animate(node, frames, duration = 300) {
+  if (!node || !enabled() || keyboard || !node.animate) return;
+  const animation = node.animate(frames, { duration, easing: 'cubic-bezier(.18,.75,.2,1)' });
+  running.add(animation);
+  animation.finished.catch(() => {}).finally(() => running.delete(animation));
+}
+function reveal(node, distance = 8, duration = 260) {
+  animate(node, [{ opacity: .45, translate: `0 ${distance}px` }, { opacity: 1, translate: '0 0' }], duration);
+}
+let lastStage = null, lastResult = null;
+function discover() {
+  syncControls();
+  const stage = app?.querySelector('.paper-stage');
+  if (stage && stage !== lastStage) {
+    stage.classList.add('is-spread');
+    if (enabled() && !keyboard) stage.querySelectorAll('.quote-paper').forEach((paper, i) => reveal(paper, 18 + i * 5, 480 + i * 90));
+    lastStage = stage;
+  } else if (!stage) lastStage = null;
+  const result = app?.querySelector('#quick-comparison .comparison-answer');
+  if (result && result !== lastResult) { reveal(result, 5, 240); lastResult = result; }
+  else if (!result) lastResult = null;
+  if (pendingView) { reveal(app?.querySelector('.workspace-view')); pendingView = null; }
+  if (emphasizeDecision) { reveal(app?.querySelector('.decision-summary .amount'), 5, 300); emphasizeDecision = false; }
+}
 document.addEventListener('keydown', () => { keyboard = true; }, { capture: true });
 document.addEventListener('pointerdown', () => { keyboard = false; }, { capture: true, passive: true });
-const reveal = (node, distance = 8, duration = 220) => {
-  if (!node || reduced.matches || keyboard || !node.animate) return;
-  node.animate([{ opacity: .35, transform: `translateY(${distance}px)` }, { opacity: 1, transform: 'none' }], { duration, easing: 'cubic-bezier(.2,.8,.2,1)' });
-};
 document.addEventListener('click', event => {
+  const control = event.target.closest('[data-motion-toggle]');
+  if (control) { manualOff = !manualOff; if (!enabled()) stop(); syncControls(); return; }
   const tab = event.target.closest('[data-action="view"]');
   if (tab && !tab.classList.contains('active')) pendingView = tab.dataset.view;
   if (event.target.closest('[data-action="lowest"]')) emphasizeDecision = true;
 }, true);
-const app = document.getElementById('app');
-const seen = new WeakSet();
-const observed = new Set();
-const observer = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
-  if (isIntersecting) { reveal(target, 12, 360); observer.unobserve(target); observed.delete(target); }
-}), { threshold: .25 });
-function discover() {
-  observed.forEach(node => { if (!node.isConnected) { observer.unobserve(node); observed.delete(node); } });
-  if (pendingView) {
-    reveal(app.querySelector('.workspace-view'));
-    pendingView = null;
-  }
-  if (emphasizeDecision) {
-    reveal(app.querySelector('.decision-summary .amount'), 5, 300);
-    emphasizeDecision = false;
-  }
-  app.querySelectorAll('.workflow-panel').forEach(node => {
-    if (!seen.has(node)) { seen.add(node); observed.add(node); observer.observe(node); }
-  });
-}
-if (app) { new MutationObserver(discover).observe(app, { childList: true }); discover(); }
-const dialog = document.getElementById('dialog');
-if (dialog) new MutationObserver(() => { if (dialog.open) reveal(dialog, 6, 200); }).observe(dialog, { attributes: true, attributeFilter: ['open'] });
-reduced.addEventListener('change', () => { if (reduced.matches) document.getAnimations().forEach(animation => animation.cancel()); });
-addEventListener('pagehide', () => { observer.disconnect(); observed.clear(); });
-addEventListener('pageshow', () => { app?.querySelectorAll('.workflow-panel').forEach(node => { observed.add(node); observer.observe(node); }); });
+const appObserver = app ? new MutationObserver(discover) : null;
+appObserver?.observe(app, { childList: true, subtree: true });
+const dialogObserver = dialog ? new MutationObserver(() => { if (dialog.open) reveal(dialog, 6, 200); }) : null;
+dialogObserver?.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+reduced.addEventListener('change', () => { if (reduced.matches) stop(); syncControls(); });
+addEventListener('pagehide', () => { stop(); appObserver?.disconnect(); dialogObserver?.disconnect(); });
+addEventListener('pageshow', () => { appObserver?.observe(app, { childList: true, subtree: true }); dialogObserver?.observe(dialog, { attributes: true, attributeFilter: ['open'] }); discover(); });
+discover();

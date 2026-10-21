@@ -1,27 +1,35 @@
-# QuoteLens — current design sources
+# QuoteLens — selected ATELIER design sources
 
-Recorded 21 October 2026. The user rejected the previous Swiss/Georgia design because the product's purpose required too much reading, the type looked generic and the overall presentation felt weak. Current direction: an immediately usable supplier comparison, with the cost difference visible before reading a guide.
+Recorded 21 October 2026. The user selected ATELIER after inspecting two working directions. Its principles were adapted to the complete QuoteLens controller; the isolated prototype is not the production persistence or import implementation.
 
-## Inspected professional references
+## Selected reference: ProSave
 
-### Ramp — purchase order detail
+[ProSave — B2B Procurement Platform UI/UX Redesign](https://www.behance.net/gallery/249980381/ProSave-B2B-Procurement-Platform-UIUX-Redesign), **Alina Volodina**, published 25 May 2026.
 
-[Official purchase-order guide](https://support.ramp.com/purchases-orders-in-ramp/#po-overview), inspected in the browser on 21 October 2026, including the actual Overview screenshot. Observed: the named purchasing record, its status and amount anchor the surface; tabs separate supporting tasks; monetary detail stays close to the relevant record. The visual hierarchy makes the object of the user's work explicit.
+Inspected in a real browser: the cream/coral opening with a staged device on an industrial object; deeper benefits, ordering and approval panels with light typography, quiet neutral surfaces, restrained icons and generous whitespace. ProSave is a procurement redesign concept. Its claims, customers, platform scope and outcomes do not establish QuoteLens's capabilities or demand.
 
-Translation: QuoteLens labels the product “Supplier quote comparison,” uses the purchase item and competing full totals as the first visual subject, and preserves a named record with request/offers/decision/history inside the app. No Ramp branding, screenshots, metrics, AI features, approval network or payment capability are reused or claimed. Ramp's surrounding AI marketing page was read for context, not taken as a visual mandate or evidence for QuoteLens demand.
+| Observed principle | QuoteLens decision |
+| --- | --- |
+| Large light type, deliberate whitespace and sparse navigation | Instrument Sans at weight 400 for the opening; quiet navigation, a literal supplier-comparison category and a clear action for the user's own quotes. |
+| A staged object explains the product's setting | Original HTML/CSS papers show a purchase request and two supplier quotes. They contain actual preview values, not copied device imagery or a decorative glass asset. |
+| Calm cream surfaces with a restrained warm accent | Warm paper and graphite throughout the working app; coral identifies selected/relevant information, while dark primary actions remain clear. |
+| Hierarchy supports a procurement task | Input → comparison → explicit review/source record. The existing multi-item, mapped-CSV and history workflow remains complete. |
 
-### Ply — procurement product design by Cosmos Studio
+The inspected reference panels were static gallery images. No motion or live behavior is attributed to ProSave on that basis. QuoteLens's short paper/result/dialog movement is original integration work and was checked separately in its running interface.
 
-[Designer's case study](https://www.cosmos.studio/projects/ply-procurement-saas-design), inspected in the browser on 21 October 2026. Observed product imagery: clear material/request terminology, calm sans-serif labels, restrained green selection, compact navigation and data-focused working surfaces. The surrounding warehouse photography is gallery presentation rather than part of a working procurement task.
+## Actual reusable design supply
 
-Translation: QuoteLens retains a quiet operational surface, clear quantities and suppliers, and a visible route to entering actual user quotes. Its current blue/navy palette, original line art, compact preview, calculations and Source Sans typography are project-specific decisions. No Ply logo, artwork, warehouse photo, client data, UI code or business outcomes are copied. This is design research, not user validation.
+**Instrument Sans**, designed by Rodrigo Fuenzalida and Jordan Egstad / Instrument, is bundled unmodified from the official [Google Fonts directory](https://github.com/google/fonts/tree/main/ofl/instrumentsans). Its official [metadata](https://github.com/google/fonts/blob/main/ofl/instrumentsans/METADATA.pb) names `InstrumentSans[wdth,wght].ttf` and the OFL license. The [upstream repository](https://github.com/Instrument/instrument-sans) is linked by that metadata.
 
-## Incorporated resource and rights
+The local binary is `dist/assets/InstrumentSans.ttf`, 194,336 bytes, SHA-256 `b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1`. The complete copyright and SIL OFL 1.1 notice is retained as [InstrumentSans-OFL.txt](../dist/assets/InstrumentSans-OFL.txt). It is served locally, works with vanilla HTML/CSS/JavaScript and adds no runtime font-service request or subscription.
 
-[Adobe Source Sans 3](https://github.com/adobe-fonts/source-sans) is designed for interface use and is distributed under [SIL OFL 1.1](https://github.com/adobe-fonts/source-sans/blob/release/LICENSE.md). The unmodified upright variable WOFF2 was fetched from official source commit `87b37a2daaed80fcb8e8ccb0085c4d72ddade12e`, path `WOFF2/VF/SourceSans3VF-Upright.ttf.woff2`. It is hosted locally at `dist/assets/SourceSans3-Variable.woff2`; its complete copyright/license is retained at `dist/assets/SourceSans3-OFL.md`. No font service, subscription or runtime package is added. Gallery references do not grant reuse rights; they supply only general layout and interaction principles here.
+Behance displays **All Rights Reserved**. No gallery artwork, screenshot, device image, brand, logo, source file or UI code is included in QuoteLens. The paper layout, coral lens icon, line art and interaction code are original project work under the repository's MIT license. No designer was contacted, no private materials were uploaded and no purchase was made. A gallery reference is not a reuse license.
 
-Original app UI, bolt SVG and integration code remain under the repository's MIT license. No designer was contacted, no private material was uploaded and no purchase was made.
+## Superseded and unselected references
 
-## Superseded references
+- **REDLINE**, the unselected study, drew on [Redford Fintech SaaS Platform — Dashboard, UX UI Design](https://www.behance.net/gallery/246302949/Redford-Fintech-SaaS-Platform-Dashboard-UX-UI-Design) by Denys K. / Denys Khimchenko. Its dark/red cockpit and Archivo type are not the selected production direction. Redford's finance/traffic charts, coins, claims and branding were not copied.
+- The former task-first navy/blue interface used [Ramp purchasing-record details](https://support.ramp.com/purchases-orders-in-ramp/#po-overview) and [Cosmos Studio's Ply procurement design](https://www.cosmos.studio/projects/ply-procurement-saas-design) as hierarchy references. It used Adobe Source Sans 3; its binary and complete OFL notice remain historical assets. [Its browser record](evidence/TASK-FIRST-UI-QA.md) describes that earlier appearance.
+- Earlier Cosmos elements [1795378467](https://www.cosmos.so/e/1795378467) and [1312667708](https://www.cosmos.so/e/1312667708) informed the superseded Swiss/Georgia ledger. [Its browser record](evidence/COSMOS-REDESIGN-QA.md) retains the original screenshots and workflow scope.
+- [Lifemed Web & Motion](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion) informed the earlier glass design. The generated glass image, Manrope and Three.js files remain with their original notices; the active interface does not load that scene.
 
-Earlier Cosmos elements [1795378467](https://www.cosmos.so/e/1795378467) and [1312667708](https://www.cosmos.so/e/1312667708) informed the now-replaced Swiss ledger. Earlier [Lifemed Web & Motion](https://www.behance.net/gallery/252323471/Lifemed-Web-Motion) informed the now-inactive glass design. Those historical references and saved screenshots do not establish acceptance of the current task-first design. Legacy Manrope, Three.js and glass assets retain their original license/provenance and are not loaded by the active app.
+See [current design decisions](DESIGN.md), [asset provenance](../dist/assets/SOURCES.md) and [current integrated checks](evidence/SELECTED-DESIGN-QA.md). Design references and internal verification do not establish real user demand or commercial results.

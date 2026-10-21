@@ -6,13 +6,13 @@
 
 Independent product by [Hồ Khắc Huy](https://github.com/builtbyhuy), built with AI coding assistance on 21 October 2026. Examples and verification inputs are synthetic. No customer adoption, measured saving, procurement deployment or production readiness is claimed.
 
-![QuoteLens current supplier comparison](docs/evidence/clarity-desktop.png)
+![QuoteLens current supplier comparison](docs/evidence/selected-desktop.png)
 
-[Current mobile interface](docs/evidence/clarity-mobile.png) · [Current design decisions](docs/DESIGN.md) · [Earlier Cosmos redesign checks](docs/evidence/COSMOS-REDESIGN-QA.md)
+[Current mobile interface](docs/evidence/selected-mobile.png) · [Selected ATELIER design](docs/DESIGN.md) · [Integrated product checks](docs/evidence/SELECTED-DESIGN-QA.md)
 
 ## Start with one decision
 
-Inspect a complete synthetic review: [six original CSV offer rows](dist/assets/reviewer-offers.csv), [revision 7 receipt](dist/assets/reviewed-receipt.json), and [recorded workflow findings from the earlier ledger interface](docs/evidence/COSMOS-REDESIGN-QA.md). The reviewed request is 37 rings and 11 seals, EUR, 21 October 2026, maximum lead seven days. Orbit Supply plus Documented Seals totals EUR 60.95. Increasing rings to 38 keeps that total but invalidates the earlier approval: input identity matters even without a price change. Those captures retain their original interface and execution scope; [current first-use desktop and phone checks](docs/evidence/TASK-FIRST-UI-QA.md) cover the shipped opening experience.
+Inspect a complete synthetic review: [nine original CSV offer rows](dist/assets/reviewer-offers.csv), [actual revision6 receipt](dist/assets/reviewed-receipt.json), and [current integrated product checks](docs/evidence/SELECTED-DESIGN-QA.md). The request is41 spacers and seven sleeves, GBP,21 October2026, maximum lead five days. Cobalt Supply plus Kestrel Parts totals **GBP42.00**, including whole packs, the minimum order and entered line fees. Changing41→42 spacers keeps that total but creates unreviewed revision7. Returning to41 creates revision8 and still needs review; the original revision6 receipt remains historical. [Earlier EUR60.95 ledger checks](docs/evidence/COSMOS-REDESIGN-QA.md) and [navy first-use checks](docs/evidence/TASK-FIRST-UI-QA.md) retain their original scope.
 
 The [independent calculation comparison](docs/evidence/ENGINEERING-EVALUATION.md) covers 15 fixed synthetic cases and 33 offer rows, with a separate rational reference, handwritten expectations and revision/content controls. It is reproducible engineering evidence, not a claim of customer savings.
 
@@ -60,7 +60,7 @@ Node 18 or newer; no install step:
 node --test tests/core.test.cjs tests/ui-persistence.test.cjs
 ```
 
-On 21 October 2026, **32 checks passed: 23 core tests and nine UI regression tests**. The core checks cover novel arbitrary inputs, exact money, pack/MOQ/line-fee rules, eligibility, CSV boundaries, source provenance, immutable receipts and hostile backup rejection. UI regressions cover note saving, delayed render safety, serialized revision writes, selected-offer warnings, first-use behavior, quantity boundaries and opening the displayed comparison without overwriting saved work. [Current interface checks](docs/evidence/TASK-FIRST-UI-QA.md) distinguish automated checks from actual browser observations.
+On 21 October 2026, **32 checks passed: 23 core tests and nine UI regression tests**. The core checks cover novel arbitrary inputs, exact money, pack/MOQ/line-fee rules, eligibility, CSV boundaries, source provenance, immutable receipts and hostile backup rejection. UI regressions cover note saving, delayed render safety, serialized revision writes, selected-offer warnings, first-use behavior, quantity boundaries and opening the displayed comparison without overwriting saved work. The existing quantity-boundary regression also checks the ATELIER paper summaries against the live comparison. [Current integrated checks](docs/evidence/SELECTED-DESIGN-QA.md) distinguish automated checks from actual browser observations.
 
 An earlier online-v2 browser verification used a custom two-item, eight-offer CSV request with an exact selected total of **USD 66.00**. Revision 6 was approved and its exported receipt retained the saved reason. Changing a requested quantity to 24 created revision 7; reverting to 23 created revision 8, which remained unapproved after reload, while the earlier receipt stayed in history. These retained synthetic workflow checks are separate from the current opening-interface checks above; they are not business acceptance, savings or a complete accessibility audit.
 
@@ -194,8 +194,16 @@ MIT licensed. No third-party runtime assets or customer records are included.
 
 
 
+## Selected visual direction
+
+The selected **ATELIER** direction uses light Instrument Sans, warm paper and an original composition of a purchase request beside two supplier quotes. Its values follow the working example; it is not a screenshot or a PDF extraction claim. The same type and color system extends through the complete request, offers, decision, history and source/review dialogs. The primary action starts your own comparison; the fictional tour remains separate from saved work until explicitly opened.
+
+[ProSave by Alina Volodina](https://www.behance.net/gallery/249980381/ProSave-B2B-Procurement-Platform-UIUX-Redesign) informed composition and hierarchy. No gallery artwork or code was copied. The locally hosted Instrument Sans binary retains its complete SIL OFL 1.1 notice. Short paper/result/dialog movement supports the task, with Motion off and reduced-motion support. See [decisions](docs/DESIGN.md), [sources and rights](docs/DESIGN-SOURCES.md) and [actual integrated checks](docs/evidence/SELECTED-DESIGN-QA.md).
+
 ## Earlier visual redesign
+
+The former Source Sans 3/navy/blue comparison and its [screenshots/checks](docs/evidence/TASK-FIRST-UI-QA.md) are historical.
 
 An earlier design followed two inspected Cosmos references: [Swiss grid structure](https://www.cosmos.so/e/1795378467) and [an editorial works index](https://www.cosmos.so/e/1312667708). Its ivory ledger, editorial type and folio metadata are preserved in [historical screenshots and workflow findings](docs/evidence/COSMOS-REDESIGN-QA.md); its references are summarized under [superseded design sources](docs/DESIGN-SOURCES.md#superseded-references). They do not describe the current opening experience; see [current design decisions](docs/DESIGN.md).
 
-The earlier Lifemed-inspired glass interface, Manrope font, original glass image and Three.js implementation remain in the repository as historical assets with their licenses. They are not loaded by the current app. Earlier `redesign-*` screenshots and `motion.gif` show that superseded version, not the shipped task-first interface. Domain rules, user data, storage and calculation behavior are preserved.
+The earlier Lifemed-inspired glass interface, Manrope font, original glass image and Three.js implementation remain in the repository as historical assets with their licenses. They are not loaded by the current app. Earlier `redesign-*` screenshots and `motion.gif` show that superseded version, not the selected ATELIER interface. Domain rules, user data, storage and calculation behavior are preserved.

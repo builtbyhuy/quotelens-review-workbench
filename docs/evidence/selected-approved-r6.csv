@@ -1,0 +1,3 @@
+item_id,item,requested_quantity,unit,supplier,quote_id,packs,units_purchased,overage,goods_cost,delivery_per_offer_line,total,currency,source_file,source_line,reason
+spacer,Control panel spacers,41,pieces,Cobalt Supply,CS-41,6,48,7,29.10,1.90,31.00,GBP,ql-novel-offers.csv,2,Cobalt supplies 48 pieces within the five-day limit; its whole-pack total is lower than Juniper after delivery.
+sleeve,Cable sleeves,7,pieces,Kestrel Parts,KP-07,3,18,11,10.35,0.65,11.00,GBP,ql-novel-offers.csv,6,Lowest eligible whole-pack purchase total.

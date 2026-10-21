@@ -1,29 +1,33 @@
-# QuoteLens — current task-first interface
+# QuoteLens — ATELIER buying desk
 
-Updated 21 October 2026 after the user rejected the editorial ledger's clarity, typography and presentation. This replaces the earlier Swiss/Georgia interface. Existing behavior, source records and user workspaces remain the product contract.
+Updated 21 October 2026 after the user selected the ATELIER direction from two working Behance-informed prototypes. The approved presentation is integrated with the complete browser product. The prototype's one-item, in-memory state layer was not copied into production.
 
-## What the first viewport must explain
+## Make the job visible before the guide
 
-QuoteLens compares supplier quotes for the full purchase quantity, including whole packs, minimum packs and per-line delivery. The page states that purpose directly: **Compare supplier quotes. See the real cost.** A working comparison follows immediately, instead of a large editorial slogan or instructions that must be read elsewhere.
+The opening identifies **Compare supplier quotes**, then shows one purchase request beside two fictional supplier quotes. The headline is **Same purchase. Different quotes. See the quoted cost.** The primary action, **Compare my quotes**, starts a user-owned request. **Try the working example** brings the visitor to an actual comparison and focuses its quantity field.
 
-The headline is the shipped interface's wording. Its calculation contract is narrower than a full landed cost: whole-pack goods costs plus entered delivery fees per offer line, before tax, without FX or shared supplier-order freight. It does not establish supplier authenticity or specification fit. See [the user guide](../dist/guide.html#limits) for the review boundary.
+These are original HTML/CSS papers with real text, not a screenshot, PDF upload feature or supplier integration. Their quantity, pack counts, fees, totals and lowest-eligible marker derive from the same `QL.analyze` result as the example below. They update when its quantity changes. The fictional label stays visible; the papers do not establish authentic supplier evidence.
 
-The fictional workshop-bolt example runs through `QL.analyze`, the same deterministic engine used for real workspaces. At 120 bolts, Oak's USD 0.18 unit price produces a USD 40.00 purchase while Birch's USD 0.22 unit price produces USD 27.40. The visible **Try 100 bolts** preset reverses the result: Oak USD 22.00, Birch USD 23.00. At 101 bolts the whole-pack boundary makes Birch USD 25.20 versus Oak USD 40.00. Supplier, pack size, purchased quantity, overage and delivery stay visible beside each total.
+The comparison contract is whole-pack goods cost plus the entered delivery fee for each offer line, before tax, without FX or shared supplier-order freight. The synthetic workshop example retains the established outcomes: at 120 bolts, Birch costs USD 27.40 versus Oak USD 40.00; at 100, Oak costs USD 22.00 versus Birch USD 23.00; at 101, Birch costs USD 25.20 versus Oak USD 40.00.
 
-The quantity field accepts whole values 1–300 for this introductory example. Invalid input leaves the last valid result visible, exposes an inline error and blocks opening a misleading comparison. The limit applies to this small example; user-created requests retain the existing domain limits. The preview creates no saved work until the user selects **Open this comparison**. That action preserves the chosen quantity and exact offer terms in a new editable workspace and opens its actual decision. Existing workspaces are not overwritten.
+The introductory quantity field accepts whole values 1–300. Invalid input retains the last valid comparison, exposes an inline error and blocks opening it as a misleading workspace. Trying quantities does not save or overwrite work. **Open this comparison** saves its exact displayed quantity and offers as a new editable workspace. User-created requests retain the full domain limits, multiple items, mapped CSV and manual offers.
 
-**Compare my quotes** starts a blank user-owned comparison. CSV mapping, manual entry, source inspection, review and export remain available. The app opens on the overview instead of silently reopening the first saved request; saved comparisons remain directly below the working example. Inside a workspace the persistent “Supplier quote comparison” descriptor keeps its purpose visible.
+## Selected visual system
 
-## Visual system
+- **Type:** locally hosted Instrument Sans, variable upright, weight 400 for large display and monetary typography, mostly 400–500 for working text and controls. Working forms use 16px inputs; ordinary task descriptions retain readable 14–15px text. Small type belongs to quiet metadata and the decorative paper composition. Tabular numerals support exact totals.
+- **Color:** warm page `#f9f7f1`, soft paper `#fffdf8`, graphite `#2d2e28`, coral display/selection `#ef6b42`, darker functional accent `#b34a29`, and dark `#303229` primary actions. Success and warning states keep their separate meanings. The navy/blue palette is superseded.
+- **Composition:** spacious first viewport, light headline, a staged original paper composition, then a working comparison sheet and saved buying records. No invented dashboard KPIs, customer logos, awards or decorative charts.
+- **Complete working surface:** request, offers, decision and history preserve their actual hierarchy. Source, CSV mapping, settings, review, receipt and recovery dialogs use the same warm surfaces and type system. The retained filename `ledger.css` does not mean the earlier Swiss ledger is active.
+- **Responsive behavior:** decorative paper transforms are contained without clipping product controls. On phones the entire three-paper group scales inside the page; supplier rows become compact records. Wide working tables scroll in their own wrappers. Decision inputs, source dialogs and exports remain ordinary accessible controls.
 
-- One locally hosted humanist family: Adobe Source Sans 3, variable upright, weights 200–900 under SIL OFL 1.1. Display titles use 650 weight and a compact scale; normal controls/body use 400–600. Tabular numerals support exact totals without turning the interface into a monospaced folio.
-- Navy ink `#182b47`, restrained blue action/selection `#2454a3`, cool page `#f4f7f8`, white working surface and quiet blue-grey separators. Green remains only where a functional approved/success status requires it. PourLab owns a separate game-oriented palette and type system.
-- Compact top navigation, direct task title, one full-width comparison sheet and aligned data. Saved work appears as records. No decorative feature-card row, quotation-like serif heading, glass scene or gallery artwork.
-- Desktop shows supplier, unit price, purchased packs and order total in shared columns. At 390px each supplier becomes a compact record with its total at right; both competing totals remain visible in the first 844px viewport. The phone header carries the single primary action, while secondary project links remain in the footer.
-- The working app, guide and case study use the same current type and color roles. Original bolt line art is project-authored SVG.
+## Motion and state
 
-## Interaction and verification boundary
+Paper entrance, result feedback, task navigation and dialog transitions are short CSS/DOM movement. They do not represent volumetric WebGL or a rendered 3D asset. Quantity changes update the result and paper summaries without replacing the focused input or preset button. Storage acknowledgement still updates the save indicator rather than rebuilding a typed note.
 
-Quantity changes update only the comparison result, preserving input and preset-button focus. The unchanged state-feedback module still handles explicit workspace-stage changes, recomputed selected totals and dialogs. Reduced-motion preference suppresses visual animations and transitions; nothing loops continuously.
+**Motion off** pauses visual effects without stopping calculations or changing saved data. The operating system's reduced-motion preference disables movement and exposes a **Reduced motion** control state. No ambient animation loops continuously. The motion controller releases detached references when leaving the overview and disconnects its observers on page exit.
 
-The calculation and storage modules are unchanged. The UI regression suite adds a recoverable missing-engine state without storage access, first-use navigation, exact 120/100/101 results, invalid input blocking and precise preview-to-workspace handoff. Automated checks supplement actual desktop/mobile browser inspection; they do not prove user adoption, commercial impact or subjective acceptance. Historical ledger/glass screenshots and their QA describe earlier designs, not the present interface.
+## Evidence and acceptance boundary
+
+[Current desktop](evidence/selected-desktop.png), [current phone](evidence/selected-mobile.png) and [selected-design checks](evidence/SELECTED-DESIGN-QA.md) describe the integrated release. The 32-check suite retains 23 core and nine targeted UI regressions; its existing quantity-boundary check also checks the paper summary. The separate 15-case/33-offer calculation corpus is unchanged. Browser checks, automated checks and the user's visual choice are different evidence.
+
+The calculation core, IndexedDB store and portable schema are preserved. No customer usage, business savings, organizational approval or complete accessibility certification is inferred from this redesign. Earlier Source Sans/navy, Swiss/Georgia and glass/Three.js captures retain their original historical scope.
